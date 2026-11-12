@@ -85,3 +85,11 @@ Choisis un service (Formspree est le plus simple à brancher) et colle son adres
 - Actuel : « Dix idées en tête. Aucune lancée. On y va ? »
 - Variante 1 : « Ton projet dort dans un carnet. On le réveille ? »
 - Variante 2 : « Assez réfléchi. On marche, on rit, tu passes à l'acte. »
+
+## 8. Nouveautés à valider
+- [ ] **Garantie premier pas** : préciser les conditions dans les CGV
+      (délai pour la demander, par exemple 7 jours ? Une seule fois par personne ?)
+- [ ] **Les 20 cartes défi** (dans `assets/js/main.js`, liste `DEFIS`) : relis-les,
+      barre celles qui ne te ressemblent pas, et dis-moi celles à ajouter
+- [ ] **Le test a sa propre page** : `test.html`. Le lien direct est idéal pour ta bio Instagram
+- [ ] **3 balades pilotes** à prix réduit, en échange d'un avis et d'une photo

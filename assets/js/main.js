@@ -77,6 +77,88 @@
     });
   })();
 
+  /* ---------------- Tire ta carte défi ---------------- */
+  (function cartesDefi() {
+    var zone = $("#carte-defi");
+    if (!zone) return;
+
+    var DEFIS = [
+      ["Hors cadre", "Écris tes trois peurs sur ton projet. Puis lis-les à voix haute avec une voix de dessin animé."],
+      ["Hors cadre", "Crie le nom de ton projet dans ta voiture, fenêtres fermées. Trois fois, de plus en plus fort."],
+      ["Hors cadre", "Raconte ton projet à une plante, un chat ou ton miroir. Puis écoute ce qu'il te répond."],
+      ["Hors cadre", "Donne un prénom à ton projet. Puis écris-lui une lettre de trois lignes."],
+      ["Hors cadre", "Va dans un lieu où tu ne mets jamais les pieds : une quincaillerie, un musée, un skatepark. Reste 10 minutes et note une idée."],
+      ["Hors cadre", "Dessine ton projet avec ton autre main. Moche, c'est parfait."],
+      ["Jeu", "Présente ton projet en 30 secondes, comme une pub télé des années 90."],
+      ["Jeu", "Écris l'article de journal qui parlera de ton projet dans un an. Titre compris."],
+      ["Jeu", "Liste 10 façons géniales de rater ton projet. Rigole. Puis évite la pire."],
+      ["Jeu", "Écris trois conseils que le toi de dans 10 ans donnerait au toi d'aujourd'hui."],
+      ["Audace", "Envoie ton idée à une personne aujourd'hui. Une phrase suffit."],
+      ["Audace", "Écris à quelqu'un qui fait déjà ce dont tu rêves. Une question, deux lignes."],
+      ["Audace", "Annonce une date à quelqu'un, à voix haute. Le reste suivra."],
+      ["Audace", "Fais un compliment sincère à un inconnu aujourd'hui. Le courage, ça s'entraîne."],
+      ["Corps", "Marche 10 minutes en pensant à ton projet. Tu ne t'assois pas avant d'avoir une idée concrète."],
+      ["Corps", "Pose une main sur ton ventre et dis ton projet à voix haute. Observe ce qui se passe dedans."],
+      ["Corps", "Danse une minute sur une chanson qui ressemble à ton projet. Personne ne regarde. Ou si."],
+      ["Action", "Fais une version moche de ton projet en 20 minutes. Moche, mais réelle."],
+      ["Action", "Bloque 20 minutes dans ton agenda cette semaine. Rien que pour ton projet."],
+      ["Action", "Achète un objet à moins de 5 € qui symbolise ton projet. Pose-le là où tu le verras chaque matin."]
+    ];
+
+    var inner = $(".carte-defi-inner", zone);
+    var carte = $(".carte-defi", zone);
+    var cat = $(".defi-cat", zone);
+    var num = $(".defi-num", zone);
+    var texte = $(".defi-texte", zone);
+    var annonce = $("#defi-annonce");
+    var btnTirer = $('[data-defi="tirer"]', zone);
+    var lienRelever = $('[data-defi="relever"]', zone);
+    var wa = String(CONFIG.whatsapp || "").replace(/\D/g, "");
+    var paquet = [];
+    var retournee = false;
+    var enCours = false;
+
+    function melanger() {
+      paquet = DEFIS.map(function (d, i) { return i; });
+      for (var k = paquet.length - 1; k > 0; k--) {
+        var h = Math.floor(Math.random() * (k + 1));
+        var t = paquet[k]; paquet[k] = paquet[h]; paquet[h] = t;
+      }
+    }
+
+    function remplir(i) {
+      var n = "n°" + String(i + 1).padStart(2, "0");
+      cat.textContent = DEFIS[i][0];
+      num.textContent = n;
+      texte.textContent = DEFIS[i][1];
+      annonce.textContent = "Carte défi " + n + ", " + DEFIS[i][0] + " : " + DEFIS[i][1];
+      if (wa) {
+        lienRelever.href = "https://wa.me/" + wa + "?text=" + encodeURIComponent(
+          "Salut Quentin ! J'ai tiré la carte défi " + n + " : « " + DEFIS[i][1] + " » Je la relève !");
+      }
+    }
+
+    function tirer() {
+      if (enCours) return;
+      enCours = true;
+      if (!paquet.length) melanger();
+      var i = paquet.pop();
+      var attente = retournee && !mouvementReduit() ? 300 : 0;
+      if (retournee) inner.classList.remove("est-retournee");
+      setTimeout(function () {
+        remplir(i);
+        inner.classList.add("est-retournee");
+        retournee = true;
+        btnTirer.textContent = "Tirer une autre carte";
+        lienRelever.hidden = false;
+        setTimeout(function () { enCours = false; }, mouvementReduit() ? 0 : 450);
+      }, attente);
+    }
+
+    btnTirer.addEventListener("click", tirer);
+    carte.addEventListener("click", tirer);
+  })();
+
   /* ---------------- 4.4 La balade ---------------- */
   (function balade() {
     var sentier = $("#sentier");
@@ -399,7 +481,7 @@
         '<div><p class="petit" style="margin:0">Ton résultat</p><h3 class="resultat-titre">' + r.titre + "</h3></div></div>" +
         '<p class="resultat-court">' + echapper(r.court) + "</p>" +
         '<div data-zone-detail>' + (detailDebloque ? htmlDetail(r) : htmlCapture()) + "</div>" +
-        '<div class="resultat-cta"><a class="btn btn--primary" href="#reserver">Réserver ma Balade Déclic <span class="fleche" aria-hidden="true">→</span></a>' +
+        '<div class="resultat-cta"><a class="btn btn--primary" href="index.html#reserver">Réserver ma Balade Déclic <span class="fleche" aria-hidden="true">→</span></a>' +
         '<button type="button" class="test-retour" data-test="refaire">↺ Refaire le test</button></div>',
         ".resultat-titre"
       );
