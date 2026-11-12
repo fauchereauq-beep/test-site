@@ -61,6 +61,22 @@
   $$(".btn--primary").forEach(surveillerCta);
   surveillerCta($("#agenda"));
 
+  /* ---------- Boutons « data-cal » : lien Cal.com, sinon WhatsApp ---------- */
+  (function liensDirects() {
+    var wa = String(CONFIG.whatsapp || "").replace(/\D/g, "");
+    var MESSAGES = { magnetisme: "Bonjour Quentin, j'aimerais réserver une séance de magnétisme." };
+    $$("[data-cal]").forEach(function (a) {
+      var cle = a.getAttribute("data-cal");
+      var lien = String(CONFIG["cal" + cle.charAt(0).toUpperCase() + cle.slice(1)] || "").trim()
+        .replace(/^https?:\/\/(app\.)?cal\.com\//i, "").replace(/^\/+|\/+$/g, "");
+      if (lien) a.href = "https://cal.com/" + lien;
+      else if (wa) a.href = "https://wa.me/" + wa + "?text=" + encodeURIComponent(MESSAGES[cle] || "Bonjour Quentin !");
+      else return;
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  })();
+
   /* ---------------- 4.4 La balade ---------------- */
   (function balade() {
     var sentier = $("#sentier");

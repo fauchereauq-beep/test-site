@@ -255,7 +255,7 @@ a:hover { text-decoration-thickness: 3px; }
   font-weight: 600;
   font-size: .95rem;
 }
-.nav-principale a:hover { background: var(--sable); }
+.nav-principale a:hover, .nav-principale a[aria-current="page"] { background: var(--sable); }
 
 .header-cta { min-height: 44px; padding: 8px 18px; font-size: .95rem; }
 /* Quand un autre bouton « Réserver » est déjà à l'écran, celui de l'en-tête s'efface d'un ton */
@@ -1128,6 +1128,28 @@ a:hover { text-decoration-thickness: 3px; }
 .temoignage--reel { border: 0; background: var(--sable); }
 .temoignage--reel blockquote { font-size: 1.05rem; line-height: 1.45; }
 .temoignage-note { margin: 0 0 10px; color: var(--nuit); letter-spacing: 2px; font-size: .95rem; }
+
+/* ---------- Page magnétisme ---------- */
+.formats { display: grid; gap: 16px; margin-top: 32px; }
+.format-saison { font-weight: 600; color: var(--gris-nuit); margin: 0 0 4px; font-size: .95rem; }
+.format .format-detail { margin-top: 14px; }
+@media (min-width: 760px) { .formats { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.temoignages--2 { max-width: 900px; }
+@media (min-width: 820px) { .temoignages--2 { grid-template-columns: 1fr 1fr; } }
+
+.pont {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 246, 234, 0.18);
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  max-width: 640px;
+}
+.pont p { margin: 0; color: rgba(255, 246, 234, 0.82); }
+.pont .pont-titre { font-family: var(--font-titre); font-weight: 700; font-size: 1.35rem; color: var(--creme); }
+
+.pont-magnetisme { margin: 20px 0 0; color: var(--gris-nuit); }
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {

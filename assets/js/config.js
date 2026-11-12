@@ -11,8 +11,9 @@ window.SITE_CONFIG = {
      Tant que c'est vide, le site affiche un emplacement « à compléter ». */
   calBalade: "",      // [LIEN CAL.COM : Balade Déclic, 1h30, 140 €]
   calParcours: "",    // [LIEN CAL.COM : Parcours Premier Pas, 4 × 1h30, 490 €]
-  calDecouverte: "",  // [LIEN CAL.COM : Appel découverte, 15 min]
-                      // Tant que c'est vide, le bouton « appel découverte » ouvre WhatsApp.
+  calDecouverte: "",  // [LIEN CAL.COM : Appel découverte, 15 min, gratuit]
+  calMagnetisme: "",  // [LIEN CAL.COM : Séance de magnétisme]
+                      // Tant que ces deux-là sont vides, leurs boutons ouvrent WhatsApp.
 
   /* 2. WHATSAPP (indicatif pays sans le +, sans espaces) */
   whatsapp: "33631794479",
