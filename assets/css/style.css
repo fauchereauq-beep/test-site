@@ -1132,7 +1132,8 @@ a:hover { text-decoration-thickness: 3px; }
 /* ---------- Page magnétisme ---------- */
 .formats { display: grid; gap: 16px; margin-top: 32px; }
 .format-saison { font-weight: 600; color: var(--gris-nuit); margin: 0 0 4px; font-size: .95rem; }
-.format .format-detail { margin-top: 14px; }
+.format .format-detail { margin-top: 10px; font-size: .95rem; }
+.format .format-prix { margin-top: 16px; font-family: var(--font-titre); font-weight: 700; font-size: 1.35rem; color: var(--nuit); }
 @media (min-width: 760px) { .formats { grid-template-columns: 1fr 1fr; gap: 20px; } }
 .temoignages--2 { max-width: 900px; }
 @media (min-width: 820px) { .temoignages--2 { grid-template-columns: 1fr 1fr; } }
@@ -1150,6 +1151,35 @@ a:hover { text-decoration-thickness: 3px; }
 .pont .pont-titre { font-family: var(--font-titre); font-weight: 700; font-size: 1.35rem; color: var(--creme); }
 
 .pont-magnetisme { margin: 20px 0 0; color: var(--gris-nuit); }
+
+/* ---------- Bouton WhatsApp flottant ---------- */
+/* Vert « jungle » de la charte : reconnaissable comme WhatsApp, et le pictogramme
+   blanc reste lisible (contraste 5,3:1, contre 2:1 avec le vert officiel). */
+.whatsapp-flottant {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 40;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--jungle);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 24px -8px rgba(30, 27, 58, 0.55);
+  transition: transform .18s ease, box-shadow .18s ease;
+  animation: wa-entree .5s ease .8s both;
+}
+.whatsapp-flottant svg { width: 30px; height: 30px; }
+.whatsapp-flottant:hover { transform: scale(1.07); box-shadow: 0 14px 30px -8px rgba(30, 27, 58, 0.6); }
+.whatsapp-flottant:focus-visible { outline: 3px solid var(--nuit); outline-offset: 3px; }
+@keyframes wa-entree {
+  from { opacity: 0; transform: translateY(16px) scale(.8); }
+  to { opacity: 1; transform: none; }
+}
+/* Pour que le bouton ne cache pas la dernière ligne du pied de page */
+.site-footer { padding-bottom: 96px; }
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {

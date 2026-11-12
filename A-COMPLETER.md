@@ -16,6 +16,11 @@ Voici la liste, **dans l'ordre où je te conseille de la faire**.
 | Balade Déclic | 90 min | 140 € |
 | Parcours Premier Pas | 90 min (première séance) | 490 € |
 | Appel découverte | 15 min | gratuit |
+| Magnétisme en pleine nature (été, Maison du Salève) | 60 min | 90 € |
+| Magnétisme à distance (hiver, par téléphone) | 60 min | 60 € |
+
+Pour le magnétisme : un seul lien suffit (`calMagnetisme`) si tu le fais pointer vers ta page Cal.com
+qui affiche les deux types. Encore à préciser sur le site : la période de l'été (de quel mois à quel mois ?).
 
 Pour la Balade et le Parcours, onglet **Advanced** :
 - **Booking questions**, ajoute les trois questions :
