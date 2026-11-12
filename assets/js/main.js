@@ -160,7 +160,7 @@
       reperes.forEach(function (r, k) { r.classList.toggle("est-passee", k <= index); });
       var dernier = index === etapes.length - 1;
       label.textContent = dernier
-        ? "Le sommet · 90 min"
+        ? "L'arrivée · 90 min"
         : "Étape " + (index + 1) + "/" + (etapes.length - 1) + " · " + titres[index];
       btnPrec.disabled = index === 0;
       btnSuiv.disabled = dernier;
@@ -506,24 +506,43 @@
         .replace(/^https?:\/\/(app\.)?cal\.com\//i, "")
         .replace(/^\/+|\/+$/g, "");
     }
-    var liens = { balade: nettoyer(CONFIG.calBalade), parcours: nettoyer(CONFIG.calParcours) };
-    if (!liens.balade) return; // pas encore branché : l'emplacement « à compléter » reste affiché
+    var ORDRE = ["balade", "parcours", "decouverte"];
+    var liens = {
+      balade: nettoyer(CONFIG.calBalade),
+      parcours: nettoyer(CONFIG.calParcours),
+      decouverte: nettoyer(CONFIG.calDecouverte)
+    };
+    var dispo = ORDRE.filter(function (f) { return liens[f]; });
+
+    // Appel découverte : tant qu'il n'a pas son lien Cal.com, le bouton ouvre WhatsApp
+    var wa = String(CONFIG.whatsapp || "").replace(/\D/g, "");
+    if (!liens.decouverte && wa) {
+      $$('[data-formule="decouverte"]').forEach(function (a) {
+        a.href = "https://wa.me/" + wa + "?text=" + encodeURIComponent("Bonjour Quentin, j'aimerais réserver un appel découverte de 15 minutes.");
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.removeAttribute("data-formule");
+      });
+    }
+    if (!dispo.length) return; // rien de branché : l'emplacement « à compléter » reste affiché
 
     var groupe = $(".choix-formule");
     var secours = $("#reserver-secours");
     var lienSecours = $("#lien-secours");
-    var formule = "balade";
+    var formule = dispo[0];
     var charge = false;
     var initialise = {};
 
-    agenda.innerHTML =
-      '<div class="agenda-cal" id="cal-balade"></div>' +
-      '<div class="agenda-cal" id="cal-parcours" hidden></div>';
-    if (liens.parcours) groupe.hidden = false;
+    agenda.innerHTML = ORDRE.map(function (f) {
+      return '<div class="agenda-cal" id="cal-' + f + '"' + (f === formule ? "" : " hidden") + "></div>";
+    }).join("");
+    $$("button[data-choix]", groupe).forEach(function (b) {
+      b.hidden = !liens[b.getAttribute("data-choix")];
+    });
+    groupe.hidden = dispo.length < 2;
     secours.hidden = false;
 
     function majSecours() { lienSecours.href = "https://cal.com/" + liens[formule]; }
-    majSecours();
 
     function chargerCal() {
       if (charge) return;
@@ -548,29 +567,31 @@
         hideEventTypeDetails: false,
         layout: "month_view"
       });
-      window.Cal.ns[f]("on", { action: "bookingSuccessful", callback: confirmer });
+      window.Cal.ns[f]("on", { action: "bookingSuccessful", callback: function () { confirmer(f); } });
     }
 
     function choisir(f) {
-      if (!liens[f]) f = "balade";
+      if (!liens[f]) f = dispo[0];
       formule = f;
       $$("button[data-choix]", groupe).forEach(function (b) {
         b.setAttribute("aria-pressed", b.getAttribute("data-choix") === f ? "true" : "false");
       });
-      $("#cal-balade").hidden = f !== "balade";
-      $("#cal-parcours").hidden = f !== "parcours";
+      ORDRE.forEach(function (x) { $("#cal-" + x).hidden = x !== f; });
       majSecours();
       if (charge) initialiser(f);
     }
 
-    function confirmer() {
+    function confirmer(f) {
+      var texte = f === "decouverte"
+        ? "On se parle très vite. Viens comme tu es, avec ton envie, même floue."
+        : "Prépare de bonnes chaussures. Prêt à jouer&nbsp;?";
       agenda.innerHTML =
         '<div class="confirmation">' +
         '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="29" cy="35" r="26" fill="#FFC233"/><path d="M17 35l8 8 16-17" fill="none" stroke="#1E1B3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M51 2 L54.2 10.3 L62.5 13.5 L54.2 16.7 L51 25 L47.8 16.7 L39.5 13.5 L47.8 10.3 Z" fill="#FF5A1F"/></svg>' +
         '<h3 tabindex="-1">C\'est noté.</h3>' +
-        "<p>Prépare de bonnes chaussures. Prêt à jouer&nbsp;?</p></div>";
+        "<p>" + texte + "</p></div>";
       secours.hidden = true;
-      if (groupe) groupe.hidden = true;
+      groupe.hidden = true;
       $("h3", agenda).focus();
     }
 
@@ -581,6 +602,8 @@
       a.addEventListener("click", function () { choisir(a.getAttribute("data-formule")); chargerCal(); });
     });
     $$('a[href="#reserver"]').forEach(function (a) { a.addEventListener("click", chargerCal); });
+
+    choisir(formule);
 
     // L'agenda se charge seulement quand on s'en approche : la page reste légère
     if ("IntersectionObserver" in window) {

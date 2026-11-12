@@ -839,8 +839,42 @@ a:hover { text-decoration-thickness: 3px; }
   margin: 0 0 24px;
 }
 .offre .btn { margin-top: auto; }
+.offre-barre {
+  font-family: var(--font-texte);
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--gris-nuit);
+  text-decoration: line-through;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.decouverte {
+  margin-top: 24px;
+  background: var(--sable);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  display: grid;
+  gap: 18px;
+  align-items: center;
+}
+.decouverte p { margin: 0; color: var(--gris-nuit); max-width: 60ch; }
+.decouverte .btn { width: 100%; }
+.decouverte .decouverte-titre {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--nuit);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 820px) {
+  .decouverte { grid-template-columns: 1fr auto; gap: 32px; padding: 30px 32px; }
+  .decouverte .btn { width: auto; }
+}
+
 .offres-pied { margin-top: 28px; }
-.offres-pied p:first-child { font-family: var(--font-titre); font-weight: 700; font-size: 1.25rem; margin-bottom: 8px; }
 .mention-sante {
   font-size: .88rem;
   color: var(--gris-nuit);
