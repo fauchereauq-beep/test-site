@@ -2,63 +2,587 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quentin — Accompagnement</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f6f1ea;
-      color: #2f2a26;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    main {
-      max-width: 620px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: normal;
-      line-height: 1.25;
-      margin: 0 0 28px;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin: 0 0 14px;
-    }
-    .bouton {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 14px 32px;
-      background: #7a8b6f;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 40px;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.03em;
-      transition: background 0.2s;
-    }
-    .bouton:hover {
-      background: #5f6f55;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- À RETIRER LE JOUR DU LANCEMENT : empêche Google d'indexer le brouillon -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Passer à l'action : Balade Déclic sur le Salève · Quentin Fauchereau</title>
+  <meta name="description" content="Dix idées en tête, aucune lancée ? En 1h30 de balade sur le Salève, aux portes de Genève, passe de la tête en pagaille au premier pas concret. Accompagnement à Collonges-sous-Salève.">
+  <link rel="canonical" href="https://quentinfauchereau.com/">
+  <meta name="theme-color" content="#FFF6EA">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Partage sur les réseaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Quentin Fauchereau">
+  <meta property="og:title" content="Dix idées en tête. Aucune lancée. On y va ?">
+  <meta property="og:description" content="Une balade de 1h30 sur le Salève pour passer de la tête en pagaille au premier pas concret. Aux portes de Genève.">
+  <meta property="og:url" content="https://quentinfauchereau.com/">
+  <meta property="og:image" content="https://quentinfauchereau.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Mesure d'audience sans cookies (Plausible). À activer au lancement :
+       retire les deux tirets de commentaire et mets ton vrai domaine.
+  <script defer data-domain="quentinfauchereau.com" src="https://plausible.io/js/script.js"></script>
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://quentinfauchereau.com/#entreprise",
+        "name": "Quentin Fauchereau, accompagnant",
+        "slogan": "Crée ce qui t'anime !",
+        "description": "Accompagnement vers l'action par le corps et le jeu : régulation du système nerveux, écoute des ressentis, magnétisme, impro. Balades sur le Salève, aux portes de Genève.",
+        "url": "https://quentinfauchereau.com/",
+        "image": "https://quentinfauchereau.com/assets/img/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Collonges-sous-Salève",
+          "postalCode": "74160",
+          "addressRegion": "Haute-Savoie",
+          "addressCountry": "FR"
+        },
+        "areaServed": ["Collonges-sous-Salève", "Saint-Julien-en-Genevois", "Genève"]
+      },
+      {
+        "@type": "Service",
+        "name": "La Balade Déclic",
+        "serviceType": "Accompagnement pour passer à l'action",
+        "provider": { "@id": "https://quentinfauchereau.com/#entreprise" },
+        "areaServed": ["Collonges-sous-Salève", "Saint-Julien-en-Genevois", "Genève"],
+        "description": "Une balade de 1h30 sur le Salève : régulation, soin, impro, et ta carte défi pour faire ton premier pas dans la semaine.",
+        "offers": { "@type": "Offer", "price": "120", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "Service",
+        "name": "Le Parcours Premier Pas",
+        "serviceType": "Accompagnement pour passer à l'action",
+        "provider": { "@id": "https://quentinfauchereau.com/#entreprise" },
+        "description": "Quatre balades pour sortir ton projet de ta tête et en faire une première version concrète.",
+        "offers": { "@type": "Offer", "price": "590", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Je n'ai qu'une envie floue, c'est pour moi ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, si tu as au moins une envie, même floue. Si tu n'as aucune idée, écris-moi : d'autres formats arrivent." } },
+          { "@type": "Question", "name": "Faut-il être sportif ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Une marche tranquille, accessible, avec des pauses." } },
+          { "@type": "Question", "name": "Le magnétisme, je dois y croire ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tu ressens ce que tu ressens, sans obligation. Tu peux aussi choisir de ne pas recevoir le soin." } },
+          { "@type": "Question", "name": "Est-ce une thérapie ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est un accompagnement vers l'action. Il ne remplace pas un suivi médical ou psychologique." } },
+          { "@type": "Question", "name": "Combien de séances faut-il ?", "acceptedAnswer": { "@type": "Answer", "text": "Une pour faire ton premier pas, quatre pour lancer ton projet." } },
+          { "@type": "Question", "name": "Ce que je dis reste confidentiel ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, toujours." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <h1>Revenir à soi pour créer ce qui nous anime</h1>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <p>J'accompagne celles et ceux qui veulent apaiser et réguler leur système nerveux, pour retrouver un socle intérieur stable.</p>
-    <p>Ensemble, nous apprenons à écouter vos ressentis, et le magnétisme vient soutenir ce chemin de retour au corps.</p>
-    <p>Mon intention : vous aider à devenir pleinement créateur ou créatrice de ce qui vous anime.</p>
+  <!-- ================= EN-TÊTE ================= -->
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a class="logo" href="#haut" aria-label="Quentin Fauchereau, retour en haut">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="29" cy="35" r="26" fill="#FFC233"/><circle cx="29" cy="35" r="12" fill="none" stroke="#1E1B3A" stroke-width="6"/><path d="M35 41 L44 50" stroke="#1E1B3A" stroke-width="6" stroke-linecap="round"/><path d="M51 2 L54.2 10.3 L62.5 13.5 L54.2 16.7 L51 25 L47.8 16.7 L39.5 13.5 L47.8 10.3 Z" fill="#FF5A1F"/></svg>
+        <span class="logo-texte">Quentin Fauchereau<small>Crée ce qui t'anime !</small></span>
+      </a>
 
-    <a href="#" class="bouton">Prendre rendez-vous</a>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#balade">La balade</a></li>
+          <li><a href="#test">Le test</a></li>
+          <li><a href="#offres">Offres</a></li>
+          <li><a href="#qui">Qui je suis</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary header-cta" href="#reserver" data-cta-entete>Réserver</a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu-mobile">
+        <span></span><span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+
+    <nav class="menu-mobile" id="menu-mobile" aria-label="Navigation mobile" hidden>
+      <ul>
+        <li><a href="#balade">La balade</a></li>
+        <li><a href="#test">Le test</a></li>
+        <li><a href="#offres">Offres</a></li>
+        <li><a href="#qui">Qui je suis</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ================= 4.1 ACCUEIL ================= -->
+    <section class="hero fond-creme" aria-labelledby="titre-accueil">
+      <div class="container hero-grid">
+        <div>
+          <p class="surtitre">Balade Déclic · sur le Salève</p>
+          <h1 id="titre-accueil">Dix idées en tête. Aucune lancée. <span class="surligne">On y va&nbsp;?</span></h1>
+          <p class="hero-sous-titre">En une balade de 1h30 sur le Salève, tu passes de la tête en pagaille au premier pas concret vers ce qui t'anime, et tu le fais dans la semaine.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#reserver">Réserver ma Balade Déclic <span class="fleche" aria-hidden="true">→</span></a>
+            <a class="lien-geste" href="#test">Faire le test : où en est mon système nerveux&nbsp;?</a>
+          </div>
+          <ul class="reassurance" aria-label="En bref">
+            <li>1h30</li>
+            <li>en pleine nature</li>
+            <li>aux portes de Genève</li>
+            <li>sans prérequis</li>
+          </ul>
+        </div>
+
+        <div class="hero-visuel">
+          <div class="disque" aria-hidden="true"></div>
+          <svg class="etincelle" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.8 9.2 L24 12 L14.8 14.8 L12 24 L9.2 14.8 L0 12 L9.2 9.2 Z" fill="#FF5A1F"/></svg>
+          <div class="photo-slot" role="img" aria-label="Emplacement photo : Quentin en mouvement sur le Salève">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span class="a-completer">[PHOTO : Quentin en mouvement, souriant, lumière naturelle sur le Salève]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.2 TU TE RECONNAIS ? ================= -->
+    <section class="section fond-sable" id="reconnais" aria-labelledby="titre-reconnais">
+      <div class="container">
+        <h2 id="titre-reconnais">Tu te reconnais&nbsp;?</h2>
+
+        <div class="cartes-3">
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round"><path d="M4 8c3-4 6 4 9 0s5 3 7 1"/><path d="M4 14c3-4 6 4 9 0s5 3 7 1"/><path d="M4 20c3-3 6 3 9 0"/></svg>
+            </div>
+            <h3>Les idées en pagaille</h3>
+            <p>Dix idées en tête et aucune lancée. Tu passes de l'une à l'autre sans en finir aucune.</p>
+          </article>
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c-2 3-2 13 0 16"/><path d="M17 4c2 3 2 13 0 16"/><path d="M10 12h4"/></svg>
+            </div>
+            <h3>La peur d'oser</h3>
+            <p>La peur qui serre le ventre au moment d'y aller. Alors tu attends le bon moment, qui ne vient pas.</p>
+          </article>
+          <article class="carte">
+            <div class="carte-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 10h6M9 14h6M9 18h3"/></svg>
+            </div>
+            <h3>Le projet qui dort</h3>
+            <p>Ce projet qui dort dans un carnet depuis des années. Tu y penses encore, souvent.</p>
+          </article>
+        </div>
+
+        <p class="bascule">Ce n'est pas un manque de volonté. Ton corps freine. <span class="surligne">On va lâcher le frein.</span></p>
+        <div class="section-fin">
+          <a class="lien-geste" href="#test">Faire le test en 2 minutes <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.3 CE QUI REND LA BALADE DIFFÉRENTE ================= -->
+    <section class="section fond-nuit" id="difference" aria-labelledby="titre-difference">
+      <div class="container">
+        <p class="surtitre">Ce qui rend la balade différente</p>
+        <h2 id="titre-difference">Pas de divan, pas de drama, pas de gourou&nbsp;: on marche, on rit, on joue.</h2>
+
+        <div class="piliers">
+          <div class="pilier">
+            <p class="pilier-num">01 · Le corps</p>
+            <h3>Lâcher le frein</h3>
+            <p>Je lis où se loge ta peur et je calme ton système nerveux. Un corps qui se sent en sécurité ose.</p>
+          </div>
+          <div class="pilier">
+            <p class="pilier-num">02 · Le jeu</p>
+            <h3>Jouer ton projet</h3>
+            <p>Impro, mise en scène de ton projet. Le rire décoince ce que la réflexion tourne en boucle.</p>
+          </div>
+          <div class="pilier">
+            <p class="pilier-num">03 · L'action</p>
+            <h3>Faire le premier pas</h3>
+            <p>Tu repars avec ta carte défi&nbsp;: un premier pas réel, à faire dans la semaine.</p>
+          </div>
+        </div>
+
+        <div class="section-fin">
+          <a class="lien-geste" href="#balade">Voir la balade, minute par minute <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.4 LA BALADE, ÉTAPE PAR ÉTAPE ================= -->
+    <section class="section fond-creme" id="balade" aria-labelledby="titre-balade">
+      <div class="container">
+        <h2 id="titre-balade">La Balade Déclic, étape par étape</h2>
+        <p class="intro">90 minutes, six étapes, un sommet&nbsp;: ton premier pas. Fais défiler ou touche une étape.</p>
+
+        <div class="balade-grid">
+          <div class="balade-panneau">
+            <div class="balade-scene">
+              <svg class="montagne" viewBox="0 0 360 260" preserveAspectRatio="xMidYMax slice" role="img" aria-labelledby="balade-svg-titre">
+                <title id="balade-svg-titre">Un sentier qui monte le Salève, du départ jusqu'au sommet</title>
+                <circle cx="182" cy="38" r="20" fill="#FFC233"/>
+                <path d="M0 260 L0 196 C 30 186, 62 160, 100 132 C 140 104, 190 76, 240 60 C 268 51, 296 40, 322 42 C 340 44, 352 56, 360 70 L360 260 Z" fill="#F6E3C8"/>
+                <path id="sentier" d="M28 238 C 80 236, 130 228, 118 210 S 64 188, 104 172 S 196 160, 176 140 S 128 116, 182 100 S 262 88, 244 72 S 226 56, 286 48" fill="none" stroke="#5B5675" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7"/>
+                <path id="sentier-fait" d="M28 238 C 80 236, 130 228, 118 210 S 64 188, 104 172 S 196 160, 176 140 S 128 116, 182 100 S 262 88, 244 72 S 226 56, 286 48" fill="none" stroke="#1E1B3A" stroke-width="3.5" stroke-linecap="round"/>
+                <g aria-hidden="true">
+                  <line x1="286" y1="48" x2="286" y2="22" stroke="#1E1B3A" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M287 22 L304 28 L287 34 Z" fill="#FF5A1F"/>
+                </g>
+                <g id="reperes" aria-hidden="true"></g>
+                <g id="marcheur" class="marcheur" aria-hidden="true" transform="translate(28 238)">
+                  <g class="marcheur-corps">
+                    <circle cx="0" cy="-11" r="9.5" fill="#FFC233" stroke="#1E1B3A" stroke-width="2.5"/>
+                    <circle cx="-3.2" cy="-12.5" r="1.5" fill="#1E1B3A"/>
+                    <circle cx="3.2" cy="-12.5" r="1.5" fill="#1E1B3A"/>
+                    <path d="M-3.5 -8.2 Q0 -5.4 3.5 -8.2" fill="none" stroke="#1E1B3A" stroke-width="1.6" stroke-linecap="round"/>
+                  </g>
+                </g>
+              </svg>
+
+              <div class="cadran" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="46" fill="#FFF6EA" stroke="#1E1B3A" stroke-width="3"/>
+                  <g id="graduations"></g>
+                  <circle id="arc-progres" cx="50" cy="50" r="33" fill="none" stroke="#FFC233" stroke-width="10" transform="rotate(-90 50 50)" stroke-dasharray="207.35" stroke-dashoffset="207.35"/>
+                  <line id="aiguille" x1="50" y1="50" x2="50" y2="14" stroke="#1E1B3A" stroke-width="3.5" stroke-linecap="round" transform="rotate(0 50 50)"/>
+                  <circle cx="50" cy="50" r="5" fill="#1E1B3A"/>
+                </svg>
+                <div class="cadran-min"><b id="cadran-valeur">0</b>′<span> / 90′</span></div>
+              </div>
+            </div>
+
+            <div class="balade-commandes">
+              <button class="btn-rond" type="button" data-balade="precedent" aria-label="Étape précédente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+              </button>
+              <p class="etape-label" id="etape-label" aria-live="polite">Départ · 0 min</p>
+              <button class="btn-rond" type="button" data-balade="suivant" aria-label="Étape suivante">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <ol class="etapes" id="etapes">
+            <li class="etape est-active" data-min="0" aria-current="step">
+              <div class="etape-temps"><b>0′</b> 10 min</div>
+              <h3><button type="button" class="etape-btn">Accueil-jeu</button></h3>
+              <p>« Prêt à jouer&nbsp;? » On choisit l'idée qui te met le plus en joie.</p>
+            </li>
+            <li class="etape" data-min="10">
+              <div class="etape-temps"><b>10′</b> 10 min</div>
+              <h3><button type="button" class="etape-btn">Ton état du moment</button></h3>
+              <p>On repère ce qui te bloque le plus aujourd'hui. Un seul blocage.</p>
+            </li>
+            <li class="etape" data-min="20">
+              <div class="etape-temps"><b>20′</b> 20 min</div>
+              <h3><button type="button" class="etape-btn">Régulation en marchant</button></h3>
+              <p>Respiration, mouvement et rire pour retrouver un corps en sécurité.</p>
+            </li>
+            <li class="etape" data-min="40">
+              <div class="etape-temps"><b>40′</b> 20 min</div>
+              <h3><button type="button" class="etape-btn">Ressentis et soin</button></h3>
+              <p>Un soin en magnétisme pour dégager le blocage et ancrer la sécurité ou l'élan. Tu peux aussi choisir de ne pas le recevoir.</p>
+            </li>
+            <li class="etape" data-min="60">
+              <div class="etape-temps"><b>60′</b> 15 min</div>
+              <h3><button type="button" class="etape-btn">Impro en live</button></h3>
+              <p>Tu vis ton projet comme s'il existait déjà.</p>
+            </li>
+            <li class="etape" data-min="75">
+              <div class="etape-temps"><b>75′</b> 15 min</div>
+              <h3><button type="button" class="etape-btn">Carte défi</button></h3>
+              <p>Tu tires ton défi&nbsp;: ton premier pas, à faire dans la semaine.</p>
+            </li>
+            <li class="etape etape-fin fond-nuit" data-min="90">
+              <div class="etape-temps"><b>90′</b> Le sommet</div>
+              <h3><button type="button" class="etape-btn">Et après&nbsp;?</button></h3>
+              <p>Une semaine après, on fait le point ensemble.</p>
+              <p style="margin-top:18px"><a class="btn btn--primary" href="#reserver">Réserver ma Balade Déclic</a></p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.5 LE TEST ================= -->
+    <section class="section fond-sable" id="test" aria-labelledby="titre-test">
+      <div class="container">
+        <p class="surtitre surtitre--jungle">Jeu · 2 minutes</p>
+        <h2 id="titre-test">Le test&nbsp;: où en est ton système nerveux&nbsp;?</h2>
+        <p class="intro">8 questions sur tes derniers jours. Pas de bonne ou de mauvaise réponse&nbsp;: réponds avec ton ventre, pas avec ta tête.</p>
+
+        <div class="test-boite" id="test-boite">
+          <div class="test-ecran" data-ecran="intro">
+            <ul class="test-meta">
+              <li>8 questions</li>
+              <li>2 minutes</li>
+              <li>1 exercice à faire tout de suite</li>
+            </ul>
+            <h3 class="question-titre">Prêt à jouer&nbsp;?</h3>
+            <p>À la fin, tu sauras si ton corps est plutôt en surchauffe, en veille ou prêt à décoller, et quoi faire dans la minute.</p>
+            <button class="btn btn--nuit" type="button" data-test="commencer">Commencer le test <span class="fleche" aria-hidden="true">→</span></button>
+            <noscript><p class="avertissement-test">Le test a besoin de JavaScript pour fonctionner.</p></noscript>
+          </div>
+        </div>
+        <p class="avertissement-test"><strong>Ce test est un jeu de repérage, pas un diagnostic médical.</strong></p>
+      </div>
+    </section>
+
+    <!-- ================= 4.6 LES OFFRES ================= -->
+    <section class="section fond-creme" id="offres" aria-labelledby="titre-offres">
+      <div class="container">
+        <h2 id="titre-offres">Choisis ton départ</h2>
+        <p class="intro">Une balade pour faire ton premier pas. Quatre pour lancer ton projet.</p>
+
+        <div class="offres">
+          <article class="offre offre--vedette fond-nuit">
+            <span class="offre-badge">Pour commencer</span>
+            <h3>La Balade Déclic</h3>
+            <p class="offre-format">1h30 · sur le Salève</p>
+            <p class="offre-prix">120&nbsp;€ <span class="a-completer">[€ OU CHF À VALIDER]</span></p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>La balade</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Le soin</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ta carte défi</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Un point de 10 à 15 minutes une semaine après</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#reserver" data-formule="balade">Réserver ma Balade Déclic</a>
+          </article>
+
+          <article class="offre">
+            <h3>Le Parcours Premier Pas</h3>
+            <p class="offre-format">4 balades</p>
+            <p class="offre-prix">590&nbsp;€ <span class="a-completer">[€ OU CHF À VALIDER]</span></p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F6E3C8"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Quatre balades</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F6E3C8"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Un vocal récapitulatif après chacune</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#F6E3C8"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Un suivi par message entre les séances</li>
+            </ul>
+            <p class="offre-promesse">En quatre balades, ton projet sort de ta tête&nbsp;: tu as fait sa première version concrète et tu l'as montrée à quelqu'un.</p>
+            <a class="btn btn--ghost btn--block" href="#reserver" data-formule="parcours">Choisir le Parcours</a>
+          </article>
+        </div>
+
+        <div class="offres-pied">
+          <p>Tu hésites&nbsp;? Commence par une Balade Déclic.</p>
+          <p class="mention-sante">Les séances ne sont pas des actes médicaux et ne remplacent pas un avis ou un traitement médical.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.7 QUI JE SUIS ================= -->
+    <section class="section fond-sable" id="qui" aria-labelledby="titre-qui">
+      <div class="container qui-grid">
+        <div class="photo-slot" role="img" aria-label="Emplacement photo : portrait de Quentin">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="a-completer">[PHOTO : portrait de Quentin, souriant, en lumière naturelle]</span>
+          </div>
+        </div>
+
+        <div class="histoire">
+          <h2 id="titre-qui">Qui je suis</h2>
+          <p>Toute ma vie, je me suis senti hors du cadre. Trop d'idées, trop d'élan, et cette impression d'attendre une autorisation qui ne venait jamais, jusqu'au jour où j'ai compris que c'était à moi de me la donner.</p>
+          <p>Je connais la tête en pagaille, la peur qui serre le ventre, l'envie d'oser qui reste coincée. Ce qui m'a manqué, c'est quelqu'un qui voie mon potentiel et me dise&nbsp;: vas-y, on y va ensemble, je suis là.</p>
+          <p>Aujourd'hui, c'est ce que je suis pour les autres.</p>
+          <p class="citation">Je ne répare pas ta vie. Je vois la <span class="surligne">Formule&nbsp;1</span> en toi, et je te mets sur la piste.</p>
+
+          <div class="mission">
+            <h3>Ma mission&nbsp;: t'amener de 0 à 1</h3>
+            <p>De l'idée qui tourne en rond au premier pas réel. Dans un monde saturé de cadres, de comparaisons et de diplômes à avoir, tu n'as pas besoin d'une autorisation de plus. Tu as besoin de quelqu'un qui croit en toi.</p>
+          </div>
+
+          <div class="valeurs">
+            <div class="valeur">
+              <span class="valeur-pastille" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round"><path d="M4 14c2-3 5-3 8 0s6 3 8 0"/></svg></span>
+              <div><h3>Douceur</h3><p>On avance à ton rythme. Rien n'est forcé.</p></div>
+            </div>
+            <div class="valeur">
+              <span class="valeur-pastille" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>
+              <div><h3>Bienveillance</h3><p>Aucun jugement. Ce que tu vis a du sens.</p></div>
+            </div>
+            <div class="valeur">
+              <span class="valeur-pastille" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1.2 1.6 2.4 2.2 4 2.2s2.8-.6 4-2.2"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="3"/></svg></span>
+              <div><h3>Rire</h3><p>On prend ton projet au sérieux. Pas toi.</p></div>
+            </div>
+          </div>
+
+          <div class="section-fin">
+            <a class="lien-geste" href="#reserver">On y va ensemble&nbsp;? Réserve ta balade <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.8 TÉMOIGNAGES ================= -->
+    <section class="section fond-creme" id="temoignages" aria-labelledby="titre-temoignages">
+      <div class="container">
+        <h2 id="titre-temoignages">Ils ont fait leur premier pas</h2>
+        <div class="temoignages">
+          <figure class="temoignage">
+            <blockquote><span class="a-completer">[PHRASE CLÉ]</span></blockquote>
+            <figcaption><span class="a-completer">[PRÉNOM]</span> · <span class="a-completer">[PROJET]</span></figcaption>
+          </figure>
+          <figure class="temoignage">
+            <blockquote><span class="a-completer">[PHRASE CLÉ]</span></blockquote>
+            <figcaption><span class="a-completer">[PRÉNOM]</span> · <span class="a-completer">[PROJET]</span></figcaption>
+          </figure>
+          <figure class="temoignage">
+            <blockquote><span class="a-completer">[PHRASE CLÉ]</span></blockquote>
+            <figcaption><span class="a-completer">[PRÉNOM]</span> · <span class="a-completer">[PROJET]</span></figcaption>
+          </figure>
+        </div>
+        <p class="avertissement-test"><span class="a-completer">[À REMPLIR APRÈS LES PREMIÈRES BALADES]</span></p>
+        <div class="section-fin">
+          <a class="lien-geste" href="#reserver">Et si le prochain, c'était toi&nbsp;? <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.9 FAQ ================= -->
+    <section class="section fond-sable" id="faq" aria-labelledby="titre-faq">
+      <div class="container">
+        <h2 id="titre-faq">Tes questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Je n'ai qu'une envie floue, c'est pour moi&nbsp;?</summary>
+            <div class="reponse"><p>Oui, si tu as au moins une envie, même floue. Si tu n'as aucune idée, écris-moi&nbsp;: d'autres formats arrivent.</p></div>
+          </details>
+          <details>
+            <summary>Faut-il être sportif&nbsp;?</summary>
+            <div class="reponse"><p>Non. Une marche tranquille, accessible, avec des pauses.</p></div>
+          </details>
+          <details>
+            <summary>Et s'il pleut&nbsp;?</summary>
+            <div class="reponse"><p><span class="a-completer">[POLITIQUE MÉTÉO]</span></p></div>
+          </details>
+          <details>
+            <summary>Le magnétisme, je dois y croire&nbsp;?</summary>
+            <div class="reponse"><p>Non. Tu ressens ce que tu ressens, sans obligation. Tu peux aussi choisir de ne pas recevoir le soin.</p></div>
+          </details>
+          <details>
+            <summary>Est-ce une thérapie&nbsp;?</summary>
+            <div class="reponse"><p>Non. C'est un accompagnement vers l'action. Il ne remplace pas un suivi médical ou psychologique.</p></div>
+          </details>
+          <details>
+            <summary>Combien de séances faut-il&nbsp;?</summary>
+            <div class="reponse"><p>Une pour faire ton premier pas, quatre pour lancer ton projet.</p></div>
+          </details>
+          <details>
+            <summary>Comment payer&nbsp;?</summary>
+            <div class="reponse"><p><span class="a-completer">[MODE DE PAIEMENT]</span></p></div>
+          </details>
+          <details>
+            <summary>Et si j'ai un empêchement&nbsp;?</summary>
+            <div class="reponse"><p><span class="a-completer">[POLITIQUE D'ANNULATION]</span></p></div>
+          </details>
+          <details>
+            <summary>Où se retrouve-t-on&nbsp;?</summary>
+            <div class="reponse"><p><span class="a-completer">[POINT DE RENDEZ-VOUS, PARKING, ACCÈS DEPUIS GENÈVE]</span></p></div>
+          </details>
+          <details>
+            <summary>Ce que je dis reste confidentiel&nbsp;?</summary>
+            <div class="reponse"><p>Oui, toujours.</p></div>
+          </details>
+        </div>
+        <div class="section-fin">
+          <a class="lien-geste" href="#reserver">Plus de questions&nbsp;? On en parle en marchant <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4.10 RÉSERVER ================= -->
+    <section class="section fond-nuit" id="reserver" aria-labelledby="titre-reserver">
+      <div class="container">
+        <div class="reserver-entete">
+          <p class="surtitre">Réserver</p>
+          <h2 id="titre-reserver">Choisis ton créneau. On s'occupe du reste.</h2>
+          <p class="intro">Trois petites questions au moment de réserver, pour que la balade parte de toi&nbsp;:</p>
+          <ol class="gris">
+            <li>Quelle idée ou quel projet te trotte dans la tête en ce moment, même flou&nbsp;?</li>
+            <li>Qu'est-ce qui t'empêche de t'y mettre&nbsp;?</li>
+            <li>À la fin de la balade, qu'est-ce qui ferait que tu repartes content&nbsp;?</li>
+          </ol>
+        </div>
+
+        <div class="choix-formule" role="group" aria-label="Formule" hidden>
+          <button type="button" data-choix="balade" aria-pressed="true">Balade Déclic</button>
+          <button type="button" data-choix="parcours" aria-pressed="false">Parcours Premier Pas</button>
+        </div>
+
+        <div class="agenda" id="agenda">
+          <div class="agenda-attente">
+            <span class="a-completer">[LIEN DE RÉSERVATION : Cal.com]</span>
+            <p>Ici s'affichera ton agenda en ligne&nbsp;: le visiteur choisit son créneau, répond aux trois questions et reçoit sa confirmation, sans quitter la page.</p>
+          </div>
+        </div>
+        <p class="reserver-secours gris" id="reserver-secours" hidden>L'agenda ne s'affiche pas&nbsp;? <a class="lien-geste" id="lien-secours" href="#" target="_blank" rel="noopener">Ouvre-le dans un nouvel onglet</a></p>
+        <p class="mention-sante" style="margin-top:20px">Les séances ne sont pas des actes médicaux et ne remplacent pas un avis ou un traitement médical. En réservant, tu acceptes les <a class="lien-geste" href="cgv.html">conditions générales de vente</a>.</p>
+      </div>
+    </section>
   </main>
+
+  <!-- ================= 4.11 PIED DE PAGE ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#haut" aria-label="Quentin Fauchereau, retour en haut">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="29" cy="35" r="26" fill="#FFC233"/><circle cx="29" cy="35" r="12" fill="none" stroke="#1E1B3A" stroke-width="6"/><path d="M35 41 L44 50" stroke="#1E1B3A" stroke-width="6" stroke-linecap="round"/><path d="M51 2 L54.2 10.3 L62.5 13.5 L54.2 16.7 L51 25 L47.8 16.7 L39.5 13.5 L47.8 10.3 Z" fill="#FF5A1F"/></svg>
+            <span class="logo-texte">Quentin Fauchereau<small>Accompagnant · corps &amp; jeu</small></span>
+          </a>
+          <p class="footer-signature">Je ne répare pas ta vie. Je vois la Formule&nbsp;1 en toi, et je te mets sur la piste.</p>
+          <p>Crée ce qui t'anime&nbsp;!</p>
+        </div>
+        <div>
+          <h2>Me joindre</h2>
+          <ul>
+            <li><span class="a-completer">[TON EMAIL]</span></li>
+            <li>Instagram&nbsp;: <span class="a-completer">[@TON COMPTE]</span></li>
+          </ul>
+          <h2 style="margin-top:24px">Où&nbsp;?</h2>
+          <ul>
+            <li>Collonges-sous-Salève</li>
+            <li>Saint-Julien-en-Genevois</li>
+            <li>Genève</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Infos</h2>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="cgv.html">Conditions générales de vente</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bas">
+        <p style="margin:0">Les séances ne sont pas des actes médicaux et ne remplacent pas un avis ou un traitement médical.</p>
+        <p style="margin:0">© 2026 Quentin Fauchereau · Collonges-sous-Salève, Haute-Savoie</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
