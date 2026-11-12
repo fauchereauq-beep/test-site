@@ -15,7 +15,7 @@ Voici la liste, **dans l'ordre où je te conseille de la faire**.
 |---|---|---|
 | Balade Déclic | 90 min | 140 € |
 | Parcours Premier Pas | 90 min (première séance) | 490 € |
-| Appel découverte | 15 min | offert |
+| Appel découverte | 15 min | gratuit |
 
 Pour la Balade et le Parcours, onglet **Advanced** :
 - **Booking questions**, ajoute les trois questions :
@@ -30,8 +30,12 @@ Paiement en ligne (facultatif) : **Apps → Stripe**, puis active-le dans chaque
 Envoie-moi ensuite les 3 liens (ex. `https://cal.com/ton-nom/balade-declic`).
 
 ## 2. Témoignages
-Copie-colle ici 3 à 5 avis, **mot pour mot**, avec le prénom tel qu'il apparaît.
-Idéalement, préviens les personnes que leur avis sera repris sur ton site.
+- [x] Paulinette et Martyna L. (avis Google, extraits mot pour mot)
+- [ ] Mois et année de l'avis de Paulinette
+- [ ] Prévenir Paulinette et Martyna que leur avis est repris sur le site
+- [ ] Un avis après ta première Balade Déclic
+Les avis qui parlent de douleurs, de tendinite ou de chimio ne sont **volontairement pas repris** :
+sur ton site, ils deviendraient des promesses de guérison.
 
 ## 3. Formulaire du test
 Choisis un service (Formspree est le plus simple à brancher) et colle son adresse dans `assets/js/config.js`.
@@ -51,8 +55,10 @@ Choisis un service (Formspree est le plus simple à brancher) et colle son adres
 - [ ] TVA : franchise en base (article 293 B du CGI) ?
 
 ## 5. Photos
-- [ ] Hero : toi en mouvement, souriant, lumière naturelle, au pied du Salève (format portrait)
-- [ ] Qui je suis : un portrait
+- [x] Provisoire : ta photo en chemise blanche (accueil) et ton portrait (qui je suis)
+- [ ] **Prioritaire** : toi dehors, en mouvement, au pied du Salève (format portrait).
+      La photo actuelle est prise en cabinet : elle contredit « magnétiseur hors cabinet ».
+- [ ] Les originaux en haute définition (pas des captures d'écran)
 
 ## 6. Le jour du lancement
 - [ ] Retirer la ligne `<meta name="robots" content="noindex, nofollow">` de chaque page

@@ -1098,6 +1098,37 @@ a:hover { text-decoration-thickness: 3px; }
 .merci { min-height: calc(100vh - var(--header-h)); display: grid; place-items: center; text-align: center; padding: 48px 0; }
 .merci svg { width: 96px; height: 96px; margin: 0 auto 20px; }
 
+/* ---------- Photos ---------- */
+.photo-hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--ombre);
+  background: var(--sable);
+}
+.qui-photo { display: flex; justify-content: center; }
+.photo-rond {
+  width: min(240px, 62vw);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px var(--soleil);
+  margin: 10px;
+}
+@media (min-width: 900px) {
+  .qui-photo { position: sticky; top: calc(var(--header-h) + 32px); }
+  .photo-rond { width: 280px; }
+}
+
+/* ---------- Avis réels ---------- */
+.temoignage--reel { border: 0; background: var(--sable); }
+.temoignage--reel blockquote { font-size: 1.05rem; line-height: 1.45; }
+.temoignage-note { margin: 0 0 10px; color: var(--nuit); letter-spacing: 2px; font-size: .95rem; }
+
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
