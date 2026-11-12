@@ -30,7 +30,8 @@ Pour la Balade et le Parcours, onglet **Advanced** :
 - **Redirect on booking** → `https://quentinfauchereau.com/merci.html`
 - **Lieu** : Maison du Salève, 775 route de Mikerne, 74160 Présilly
 
-Paiement en ligne (facultatif) : **Apps → Stripe**, puis active-le dans chaque type de rendez-vous.
+Paiement : en espèces ou par virement, donc pas besoin de Stripe dans Cal.com.
+Reste à préciser : on paie le jour de la séance, ou avant ?
 
 Envoie-moi ensuite les 3 liens (ex. `https://cal.com/ton-nom/balade-declic`).
 
@@ -49,7 +50,7 @@ Choisis un service (Formspree est le plus simple à brancher) et colle son adres
 
 ## 4. Textes encore manquants
 - [ ] Ton e-mail
-- [ ] Mode de paiement
+- [x] Mode de paiement : espèces ou virement
 - [ ] Politique d'annulation
 - [ ] Politique météo
 - [ ] Durée de validité du Parcours (4 séances à utiliser en combien de temps ?)
