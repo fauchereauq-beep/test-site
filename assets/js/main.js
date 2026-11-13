@@ -541,7 +541,13 @@
         reponses = []; profil = null; ecranQuestion(0);
       });
       var form = $("form.capture", boite);
-      if (form) form.addEventListener("submit", envoyer);
+      if (form) {
+        form.addEventListener("submit", envoyer);
+        // Dès que la personne corrige quelque chose, le message d'erreur disparaît
+        var effacer = function () { var er = $(".capture-erreur", form); if (er) er.hidden = true; };
+        form.addEventListener("input", effacer);
+        form.addEventListener("change", effacer);
+      }
       brancherChrono();
     }
 
