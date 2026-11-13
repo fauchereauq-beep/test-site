@@ -24,5 +24,5 @@ window.SITE_CONFIG = {
      Exemple Formspree : "https://formspree.io/f/abcdwxyz"
      Tant que c'est vide, le résultat détaillé s'affiche quand même,
      mais rien n'est envoyé. */
-  formulaireTest: "" // [SERVICE DE FORMULAIRE : Tally, Formspree ou Brevo]
+  formulaireTest: "https://b83933ee.sibforms.com/serve/MUIFABo1eYIYNR5QvmqYQDOiXHiKmTjSguyaMyGBrkn1XuPhl222lt_OOAkajGsDwUzBn5ArqRD0UCvJOQI18SW25sodDJnxUznWmV-NtpLR_VLwlUD7G9ZqRPjtHyW4gGkT4Bd5pribbdqIHsylXDBhJEHgJFcOQISPCwm3Ekz_pOxtKYVq1-__7gK9S-9X8-iGfstgMN6wQun7Tw==" // [SERVICE DE FORMULAIRE : Tally, Formspree ou Brevo]
 };

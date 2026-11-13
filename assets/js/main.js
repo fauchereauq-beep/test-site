@@ -430,7 +430,7 @@
     var reponses = [];
     var profil = null;
     // Tant qu'aucun service d'envoi n'est branché, on ne promet pas d'e-mail : le détail s'affiche tout de suite
-    var detailDebloque = !String(CONFIG.formulaireTest || "").trim();
+    var avecInscription = !!String(CONFIG.formulaireTest || "").trim();
     var chronoTimer = null;
 
     function echapper(t) {
@@ -512,13 +512,13 @@
 
     function htmlCapture() {
       return '<form class="capture" novalidate>' +
-        "<h4>Reçois ton résultat et ton premier défi par e-mail</h4>" +
+        "<h4>On reste en contact ? Reçois mes cartes défi et mes conseils par e-mail</h4>" +
         '<div class="champ"><label for="test-prenom">Ton prénom</label><input id="test-prenom" name="prenom" type="text" autocomplete="given-name" required></div>' +
         '<div class="champ"><label for="test-email">Ton e-mail</label><input id="test-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>' +
         '<input class="pot-de-miel" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-        '<label class="consentement"><input type="checkbox" name="consentement" required> <span>J\'accepte de recevoir mon résultat et quelques e-mails de Quentin pour passer à l\'action. Désinscription en un clic. <a href="confidentialite.html">Ce que je fais de tes données</a>.</span></label>' +
+        '<label class="consentement"><input type="checkbox" name="consentement" required> <span>J\'accepte de recevoir les e-mails de Quentin pour passer à l\'action. Désinscription en un clic. <a href="confidentialite.html">Ce que je fais de tes données</a>.</span></label>' +
         '<p class="capture-erreur" hidden></p>' +
-        '<button class="btn btn--nuit" type="submit">Recevoir mon résultat</button>' +
+        '<button class="btn btn--nuit" type="submit">Je m\'inscris</button>' +
         "</form>";
     }
 
@@ -528,7 +528,7 @@
         '<div class="resultat-tete"><div class="resultat-illu">' + ILLU[profil] + "</div>" +
         '<div><p class="petit" style="margin:0">Ton résultat</p><h3 class="resultat-titre">' + r.titre + "</h3></div></div>" +
         '<p class="resultat-court">' + echapper(r.court) + "</p>" +
-        '<div data-zone-detail>' + (detailDebloque ? htmlDetail(r) : htmlCapture()) + "</div>" +
+        '<div data-zone-detail>' + (htmlDetail(r) + (avecInscription ? htmlCapture() : "")) + "</div>" +
         '<div class="resultat-cta"><a class="lien-geste" href="index.html#carte-defi">Tire aussi ta carte défi</a><a class="btn btn--primary" href="index.html#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>' +
         '<button type="button" class="test-retour" data-test="refaire">↺ Refaire le test</button></div>',
         ".resultat-titre"
@@ -583,7 +583,7 @@
         return;
       }
       if (!form.consentement.checked) {
-        erreur.textContent = "Coche la case pour recevoir ton résultat par e-mail.";
+        erreur.textContent = "Coche la case pour recevoir mes e-mails.";
         erreur.hidden = false;
         form.consentement.focus();
         return;
@@ -594,38 +594,26 @@
       bouton.disabled = true;
       bouton.textContent = "Envoi…";
 
-      var r = RESULTATS[profil];
-      var donnees = {
-        prenom: prenom,
-        email: email,
-        consentement: "oui",
-        resultat: r.titre,
-        reponses: reponses.map(function (k, i) { return QUESTIONS[i].q + " → " + QUESTIONS[i].r[k][0]; }).join("\n"),
-        date: new Date().toISOString()
-      };
+      // Format attendu par le formulaire Brevo
+      var corps = new URLSearchParams();
+      corps.set("EMAIL", email);
+      corps.set("PRENOM", prenom);
+      corps.set("FIRSTNAME", prenom);
+      corps.set("PROFIL", RESULTATS[profil].titre);
+      corps.set("email_address_check", "");
+      corps.set("locale", "fr");
 
       var adresse = (CONFIG.formulaireTest || "").trim();
-      var envoi = adresse
-        ? fetch(adresse, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(donnees)
-          }).then(function (rep) { if (!rep.ok) throw new Error("HTTP " + rep.status); })
-        : Promise.resolve();
-
-      envoi.then(function () {
-        detailDebloque = true;
-        var zone = $("[data-zone-detail]", boite);
-        zone.innerHTML = '<p class="surtitre" style="margin-top:20px">' +
-          (adresse ? "C'est envoyé, " + echapper(prenom) + " ! Regarde ta boîte mail." : "Voici ton résultat détaillé, " + echapper(prenom) + ".") +
-          "</p>" + htmlDetail(r);
-        brancherChrono();
-        var titre = $(".exercice h4", zone);
-        if (titre) { titre.setAttribute("tabindex", "-1"); titre.focus({ preventScroll: false }); }
-      }).catch(function () {
+      function merci() {
+        form.outerHTML = '<p class="surtitre" style="margin-top:24px" tabindex="-1" data-merci>C\'est noté, ' + echapper(prenom) + " ! On reste en contact.</p>";
+        var m = $("[data-merci]", boite);
+        if (m) m.focus({ preventScroll: true });
+      }
+      // « no-cors » : le navigateur envoie les données, mais ne nous montre pas la réponse de Brevo
+      fetch(adresse, { method: "POST", mode: "no-cors", body: corps }).then(merci, function () {
         bouton.disabled = false;
-        bouton.textContent = "Recevoir mon résultat";
-        erreur.textContent = "Oups, l'envoi n'est pas passé. Réessaie dans un instant.";
+        bouton.textContent = "Je m'inscris";
+        erreur.textContent = "Oups, l'envoi n'est pas passé. Vérifie ta connexion et réessaie.";
         erreur.hidden = false;
       });
     }
