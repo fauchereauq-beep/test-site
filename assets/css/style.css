@@ -1285,6 +1285,8 @@ a:hover { text-decoration-thickness: 3px; }
 .lieu h2 { font-size: clamp(1.5rem, 5vw, 2.1rem); }
 .lieu p:last-child { margin: 0; color: rgba(255, 246, 234, 0.85); max-width: 60ch; }
 
+.capture-sous { margin: -6px 0 14px; color: var(--gris-nuit); font-size: .95rem; }
+
 /* ---------- Garantie ---------- */
 .garantie {
   margin: 0 0 22px;
