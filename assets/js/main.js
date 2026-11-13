@@ -130,6 +130,8 @@
     var num = $(".defi-num", zone);
     var texte = $(".defi-texte", zone);
     var annonce = $("#defi-annonce");
+    var ideeEl = $(".defi-idee", zone);
+    var idee = "";
     var btnTirer = $('[data-defi="tirer"]', zone);
     var lienRelever = $('[data-defi="relever"]', zone);
     var wa = String(CONFIG.whatsapp || "").replace(/\D/g, "");
@@ -150,10 +152,12 @@
       cat.textContent = DEFIS[i][0];
       num.textContent = n;
       texte.textContent = DEFIS[i][1];
+      ideeEl.hidden = !idee;
+      ideeEl.textContent = idee ? "« " + idee + " »" : "";
       annonce.textContent = "Carte défi " + n + ", " + DEFIS[i][0] + " : " + DEFIS[i][1];
       if (wa) {
         lienRelever.href = "https://wa.me/" + wa + "?text=" + encodeURIComponent(
-          "Salut Quentin ! J'ai tiré la carte défi " + n + " : « " + DEFIS[i][1] + " » Je la relève !");
+          "Salut Quentin ! " + (idee ? "Mon idée : « " + idee + " ». " : "") + "J'ai tiré la carte défi " + n + " : « " + DEFIS[i][1] + " » Je la relève !");
       }
     }
 
@@ -175,6 +179,13 @@
     }
 
     btnTirer.addEventListener("click", tirer);
+    var formIdee = $("#idee-form");
+    if (formIdee) formIdee.addEventListener("submit", function (e) {
+      e.preventDefault();
+      idee = formIdee.idee.value.trim().slice(0, 70);
+      zone.scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "start" });
+      setTimeout(tirer, mouvementReduit() ? 0 : 500);
+    });
     carte.addEventListener("click", tirer);
   })();
 
@@ -367,6 +378,11 @@
         titre: "En surchauffe",
         court: "Tout s'accélère, la tête déborde.",
         texte: "Ton corps a le pied sur l'accélérateur : la tête déborde et tout va trop vite. Ce n'est pas un défaut, c'est un système qui veut tout gérer en même temps. Avant d'agir, on fait redescendre la pression, pour que ton élan serve enfin ton projet.",
+        gestes: [
+          "Une seule chose à la fois : écris toutes tes idées, puis entoures-en une. Les autres attendront.",
+          "Marche 10 minutes sans téléphone après un repas.",
+          "Coupe les écrans 30 minutes avant de dormir."
+        ],
         exo: "Le soupir physiologique",
         etapes: [
           "Inspire par le nez.",
@@ -379,6 +395,11 @@
         titre: "En veille",
         court: "L'énergie s'éteint, le projet paraît loin.",
         texte: "Ton corps a mis ton projet en pause pour économiser ton énergie. Ce n'est pas de la paresse, c'est une façon de te protéger. On rallume le moteur en douceur, par le mouvement, avant de te demander d'avancer.",
+        gestes: [
+          "Bouge avant de réfléchir : 2 minutes le matin à sautiller ou secouer les bras.",
+          "Sors 10 minutes à la lumière du jour, dans l'heure qui suit ton réveil.",
+          "Fais un micro-pas de 5 minutes sur ton projet, avec un minuteur. Pas plus."
+        ],
         exo: "Pousser le mur",
         etapes: [
           "Pose tes deux mains à plat contre un mur ou un arbre.",
@@ -391,6 +412,11 @@
         titre: "Prêt à décoller",
         court: "Le terrain est prêt, il manque le premier pas.",
         texte: "Ton terrain est prêt : il y a de l'énergie et un minimum de clarté. Ce qui te manque n'est pas une préparation de plus, c'est le premier pas. Celui-là, on peut le faire ensemble, dans la semaine.",
+        gestes: [
+          "Annonce une date à quelqu'un, à voix haute.",
+          "Bloque 20 minutes dans ton agenda, rien que pour ton projet.",
+          "Fais la version moche : 10 minutes, mais réelle."
+        ],
         exo: "Ton premier pas en une phrase",
         etapes: [
           "Prends un papier ou ton téléphone.",
@@ -473,6 +499,8 @@
       var etapes = r.etapes.map(function (e) { return "<li>" + echapper(e) + "</li>"; }).join("");
       return '<div class="detail">' +
         "<p>" + echapper(r.texte) + "</p>" +
+        '<div class="bilan-gestes"><h4>Ton bilan : 3 gestes simples cette semaine</h4><ol>' +
+        r.gestes.map(function (g) { return "<li>" + echapper(g) + "</li>"; }).join("") + "</ol></div>" +
         '<div class="exercice">' +
           "<h4>Ton exercice d'une minute : " + echapper(r.exo) + "</h4>" +
           "<ol>" + etapes + "</ol>" +
@@ -501,7 +529,7 @@
         '<div><p class="petit" style="margin:0">Ton résultat</p><h3 class="resultat-titre">' + r.titre + "</h3></div></div>" +
         '<p class="resultat-court">' + echapper(r.court) + "</p>" +
         '<div data-zone-detail>' + (detailDebloque ? htmlDetail(r) : htmlCapture()) + "</div>" +
-        '<div class="resultat-cta"><a class="btn btn--primary" href="index.html#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>' +
+        '<div class="resultat-cta"><a class="lien-geste" href="index.html#carte-defi">Tire aussi ta carte défi</a><a class="btn btn--primary" href="index.html#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>' +
         '<button type="button" class="test-retour" data-test="refaire">↺ Refaire le test</button></div>',
         ".resultat-titre"
       );

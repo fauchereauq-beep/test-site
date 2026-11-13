@@ -1251,6 +1251,36 @@ a:hover { text-decoration-thickness: 3px; }
 .zone-texte { max-width: 62ch; color: var(--gris-nuit); margin: 0; }
 @media (max-width: 380px) { .header-cta { padding: 8px 12px; font-size: .88rem; } }
 
+/* ---------- Champ « écris ton idée » ---------- */
+.idee-form { display: grid; gap: 10px; margin: 0 0 22px; max-width: 460px; }
+.idee-form label { font-weight: 600; }
+.idee-form input {
+  font: inherit; color: var(--nuit); background: #fff;
+  border: 2px solid var(--nuit); border-radius: var(--radius-sm);
+  padding: 13px 16px; min-height: 52px; width: 100%;
+}
+.idee-form input:focus { outline: none; box-shadow: 0 0 0 4px rgba(255, 194, 51, .7); }
+.idee-form input::placeholder { color: var(--gris-nuit); opacity: .8; }
+.defi-idee { margin: 0; font-weight: 600; font-style: italic; color: var(--flamme-texte); font-size: .95rem; line-height: 1.3; overflow-wrap: anywhere; }
+
+/* ---------- Balises : pour qui ---------- */
+.balises { display: grid; gap: 14px; margin-top: 24px; }
+.balise { background: var(--creme); border-radius: var(--radius); padding: 22px; }
+.balise h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
+.balise-marque { flex-shrink: 0; width: 34px; height: 12px; border-radius: 6px; background: var(--soleil); }
+.balise-marque--non { width: 26px; height: 26px; border-radius: 0; background:
+  linear-gradient(45deg, transparent 42%, var(--flamme) 42% 58%, transparent 58%),
+  linear-gradient(-45deg, transparent 42%, var(--flamme) 42% 58%, transparent 58%); }
+.balise ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.balise li { position: relative; padding-left: 20px; }
+.balise li::before { content: ""; position: absolute; left: 0; top: .7em; width: 10px; height: 3px; border-radius: 2px; background: var(--nuit); }
+@media (min-width: 760px) { .balises { grid-template-columns: 1.3fr 1fr; gap: 20px; align-items: start; } }
+
+/* ---------- Bilan du test ---------- */
+.bilan-gestes { margin-top: 20px; background: var(--sable); border-radius: var(--radius); padding: 22px; }
+.bilan-gestes h4 { font-family: var(--font-titre); font-size: 1.15rem; margin: 0 0 10px; }
+.bilan-gestes ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
 /* ---------- Garantie ---------- */
 .garantie {
   margin: 0 0 22px;

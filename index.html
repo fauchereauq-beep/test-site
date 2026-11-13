@@ -11,6 +11,7 @@
   <meta name="theme-color" content="#FFF6EA">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
   <!-- Partage sur les réseaux -->
@@ -188,9 +189,14 @@
           <p class="surtitre">Balade Déclic · au pied du Salève</p>
           <h1 id="titre-accueil">Ton projet prend la poussière. On le sort <span class="surligne">faire un tour&nbsp;?</span></h1>
           <p class="hero-sous-titre">1h30 de marche à plat, au pied du Salève. On rit, on lâche le frein, et tu repars avec ton premier pas concret. Celui que tu repousses depuis des mois.</p>
+          <form class="idee-form" id="idee-form" novalidate>
+            <label for="idee-champ">Commence ici. Écris l'idée que tu n'oses pas lancer&nbsp;:</label>
+            <input id="idee-champ" name="idee" type="text" maxlength="70" autocomplete="off" placeholder="Ouvrir mon atelier de céramique, écrire mon livre…">
+            <button class="btn btn--nuit" type="submit">Tire ma carte défi</button>
+          </form>
           <div class="hero-actions">
             <a class="btn btn--primary" href="#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>
-            <a class="lien-geste" href="test.html">Faire le test : où en est mon système nerveux&nbsp;?</a>
+            <a class="lien-geste" href="#balade">Voir la balade</a>
           </div>
           <ul class="reassurance" aria-label="En bref">
             <li>1h30</li>
@@ -208,15 +214,29 @@
       </div>
     </section>
 
-    <!-- ================= 4.2 TU TE RECONNAIS ? ================= -->
+    <!-- ================= 4.2 POUR QUI ================= -->
     <section class="section fond-sable" id="reconnais" aria-labelledby="titre-reconnais">
       <div class="container">
-        <h2 id="titre-reconnais">Tu te reconnais&nbsp;?</h2>
-        <ul class="reconnais-liste">
-          <li><span class="carte-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round"><path d="M4 8c3-4 6 4 9 0s5 3 7 1"/><path d="M4 14c3-4 6 4 9 0s5 3 7 1"/><path d="M4 20c3-3 6 3 9 0"/></svg></span><div><h3>Les idées en pagaille</h3><p>Dix idées en tête, aucune lancée.</p></div></li>
-          <li><span class="carte-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c-2 3-2 13 0 16"/><path d="M17 4c2 3 2 13 0 16"/><path d="M10 12h4"/></svg></span><div><h3>La peur d'oser</h3><p>La peur qui serre le ventre au moment d'y aller.</p></div></li>
-          <li><span class="carte-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 10h6M9 14h6M9 18h3"/></svg></span><div><h3>Le projet qui dort</h3><p>Ce projet qui dort dans un carnet depuis des années.</p></div></li>
-        </ul>
+        <p class="surtitre">Pour qui&nbsp;?</p>
+        <h2 id="titre-reconnais">Lis les balises.</h2>
+        <div class="balises">
+          <article class="balise">
+            <h3><span class="balise-marque balise-marque--oui" aria-hidden="true"></span>Bonne direction</h3>
+            <ul>
+              <li>Tu as une idée en tête, et tu n'oses pas.</li>
+              <li>Tu doutes, tu repousses, tu attends le bon moment.</li>
+              <li>Tu as dix projets et aucun de lancé.</li>
+              <li>Tu veux bouger, pas seulement en parler.</li>
+            </ul>
+          </article>
+          <article class="balise">
+            <h3><span class="balise-marque balise-marque--non" aria-hidden="true"></span>Mauvaise direction</h3>
+            <ul>
+              <li>Tu cherches une thérapie ou un suivi médical&nbsp;: ce n'est pas mon métier.</li>
+              <li>Tu veux quelqu'un qui fasse à ta place.</li>
+            </ul>
+          </article>
+        </div>
         <p class="bascule">Ce n'est pas un manque de volonté. Ton corps freine. <span class="surligne">On va lâcher le frein.</span></p>
         <div class="section-fin">
           <a class="lien-geste" href="test.html">Faire le test en 2 minutes <span aria-hidden="true">→</span></a>
@@ -242,6 +262,7 @@
             </div>
             <div class="carte-defi-face carte-defi-recto">
               <div class="recto-haut"><span class="defi-cat">Audace</span><span class="defi-num">n°01</span></div>
+              <p class="defi-idee" hidden></p>
               <p class="defi-texte">Envoie ton idée à une personne aujourd'hui. Une phrase suffit.</p>
               <p class="recto-bas">Crée ce qui t'anime&nbsp;!</p>
             </div>
