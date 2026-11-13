@@ -199,6 +199,16 @@ a:hover { text-decoration-thickness: 3px; }
 .fond-sable .lien-geste { color: var(--nuit); }
 .fond-nuit .lien-geste { color: var(--soleil); }
 
+/* ---------- Bandeau du haut : lieu et réseaux ---------- */
+.bandeau-haut { background: var(--nuit); color: var(--creme); }
+.bandeau-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
+.bandeau-inner p { margin: 0; font-size: .82rem; font-weight: 600; }
+.reseaux { list-style: none; margin: 0 -8px 0 0; padding: 0; display: flex; gap: 2px; }
+.reseaux a { display: grid; place-items: center; width: 44px; height: 44px; color: var(--creme); border-radius: 50%; transition: color .15s ease, transform .15s ease; }
+.reseaux a:hover { color: var(--soleil); transform: scale(1.1); }
+.reseaux a:focus-visible { outline: 3px solid var(--soleil); outline-offset: -4px; }
+.reseaux svg { width: 22px; height: 22px; }
+
 /* ---------- En-tête ---------- */
 .site-header {
   position: sticky;
@@ -1215,7 +1225,9 @@ a:hover { text-decoration-thickness: 3px; }
 }
 
 /* ---------- Chiffres et choix de saison ---------- */
-.chiffres { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.chiffres { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.chiffres li { overflow-wrap: anywhere; }
+@media (max-width: 400px) { .chiffres li { padding: 12px 6px; font-size: .78rem; } .chiffres b { font-size: 1.35rem; } }
 .chiffres li {
   background: var(--creme);
   border-radius: var(--radius-sm);
@@ -1233,6 +1245,11 @@ a:hover { text-decoration-thickness: 3px; }
   margin-bottom: 2px;
 }
 .choix-saison .btn { flex: 1 1 240px; }
+
+.fond-nuit .agenda .lien-geste { color: var(--flamme-texte); }
+.youtube-ligne { margin: 20px 0 0; }
+.zone-texte { max-width: 62ch; color: var(--gris-nuit); margin: 0; }
+@media (max-width: 380px) { .header-cta { padding: 8px 12px; font-size: .88rem; } }
 
 /* ---------- Garantie ---------- */
 .garantie {

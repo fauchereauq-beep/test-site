@@ -500,7 +500,7 @@
         '<div><p class="petit" style="margin:0">Ton résultat</p><h3 class="resultat-titre">' + r.titre + "</h3></div></div>" +
         '<p class="resultat-court">' + echapper(r.court) + "</p>" +
         '<div data-zone-detail>' + (detailDebloque ? htmlDetail(r) : htmlCapture()) + "</div>" +
-        '<div class="resultat-cta"><a class="btn btn--primary" href="index.html#reserver">Réserver ma Balade Déclic <span class="fleche" aria-hidden="true">→</span></a>' +
+        '<div class="resultat-cta"><a class="btn btn--primary" href="index.html#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>' +
         '<button type="button" class="test-retour" data-test="refaire">↺ Refaire le test</button></div>',
         ".resultat-titre"
       );

@@ -10,13 +10,25 @@ Voici la liste, **dans l'ordre où je te conseille de la faire**.
 - Ton histoire (Odette, 2023) et tes repères : 2 ans, 50+ séances, 30+ personnes
 - Le test sur sa propre page, les 20 cartes défi, le bouton WhatsApp flottant
 
-## 1. Ta règle d'annulation ⚠️ bloquant
-Jusqu'à combien d'heures avant peut-on annuler ou reporter gratuitement ? Et après ?
-Sans elle, ni les CGV ni Cal.com ne sont complets.
+## 1. Mettre le site sur quentinfauchereau.com ⚠️ bloquant pour Google
+Tant que le site est à l'adresse provisoire, avec la ligne « ne pas indexer », Google ne le voit pas.
+Il me faut : **où ton nom de domaine est géré** (OVH, Hostinger, Wix, GoDaddy… cherche une facture
+dans tes e-mails), et ton e-mail de contact pour les mentions légales.
 
-## 2. Cal.com
-Suis le guide **`CAL-COM.md`** : tous les textes sont prêts à copier-coller.
-Puis envoie-moi les **5 liens** (balade, parcours, appel, magnétisme nature, magnétisme téléphone).
+## 2. Cal.com ✅ branché
+- [x] Les 5 liens sont dans le site (annulation 48 h, Parcours valable 2 mois)
+- [ ] Teste chaque bouton du site sur ton téléphone (je ne peux pas ouvrir Cal.com d'ici)
+- [ ] Dans Cal.com, renomme « Appel découverte » en « Coup de fil sans filtre · 15 min, gratuit »
+      (ne change pas l'URL)
+- [ ] Recopie la règle d'annulation et les 2 mois dans les descriptions Cal.com
+
+## 2 bis. Fiche Google Business
+- [ ] Type : établissement **sans adresse affichée**, avec zones desservies
+      (Collonges-sous-Salève, Saint-Julien-en-Genevois, Présilly, Genève). L'adresse de ton domicile
+      reste cachée. Ne mets pas la Maison du Salève : ce n'est pas ton établissement.
+- [ ] Une modification à la fois, à quelques jours d'intervalle. Ne change pas le nom.
+- [ ] Ajoute le lien du site (une fois sur ton domaine), le lien de réservation, YouTube et Instagram
+- [ ] Mets à jour la description (« en cabinet » n'est plus vrai) et ajoute des photos dehors
 
 ## 3. Photos et vidéo : une seule sortie, demain
 Au pied du Salève, idéalement l'heure avant le coucher du soleil. Quelqu'un d'autre tient le téléphone.
