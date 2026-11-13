@@ -1281,6 +1281,10 @@ a:hover { text-decoration-thickness: 3px; }
 .bilan-gestes h4 { font-family: var(--font-titre); font-size: 1.15rem; margin: 0 0 10px; }
 .bilan-gestes ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
 
+.offre-devise { font-family: var(--font-texte); font-size: 1rem; font-weight: 600; letter-spacing: 0; }
+.lieu h2 { font-size: clamp(1.5rem, 5vw, 2.1rem); }
+.lieu p:last-child { margin: 0; color: rgba(255, 246, 234, 0.85); max-width: 60ch; }
+
 /* ---------- Garantie ---------- */
 .garantie {
   margin: 0 0 22px;
