@@ -403,7 +403,8 @@
 
     var reponses = [];
     var profil = null;
-    var detailDebloque = false;
+    // Tant qu'aucun service d'envoi n'est branché, on ne promet pas d'e-mail : le détail s'affiche tout de suite
+    var detailDebloque = !String(CONFIG.formulaireTest || "").trim();
     var chronoTimer = null;
 
     function echapper(t) {
