@@ -1214,6 +1214,26 @@ a:hover { text-decoration-thickness: 3px; }
   .footer-bas { margin-top: 28px; }
 }
 
+/* ---------- Chiffres et choix de saison ---------- */
+.chiffres { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.chiffres li {
+  background: var(--creme);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+  font-size: .85rem;
+  line-height: 1.3;
+  color: var(--gris-nuit);
+}
+.chiffres b {
+  display: block;
+  font-family: var(--font-titre);
+  font-size: 1.6rem;
+  color: var(--nuit);
+  margin-bottom: 2px;
+}
+.choix-saison .btn { flex: 1 1 240px; }
+
 /* ---------- Garantie ---------- */
 .garantie {
   margin: 0 0 22px;

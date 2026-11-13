@@ -39,6 +39,22 @@
   });
   window.matchMedia("(min-width: 980px)").addEventListener("change", fermerMenu);
 
+  /* ---------- Magnétisme : le bouton de la saison en cours passe en avant ---------- */
+  (function saisons() {
+    var mois = new Date().getMonth() + 1;
+    var ete = mois >= 5 && mois <= 9;
+    $$("[data-saison]").forEach(function (a) {
+      var deSaison = (a.getAttribute("data-saison") === "ete") === ete;
+      a.classList.toggle("btn--primary", deSaison);
+      a.classList.toggle("btn--ghost", !deSaison);
+    });
+    // Le bouton de la saison en cours passe en premier
+    $$(".choix-saison").forEach(function (groupe) {
+      var premier = $('[data-saison="' + (ete ? "ete" : "hiver") + '"]', groupe);
+      if (premier) groupe.insertBefore(premier, groupe.firstChild);
+    });
+  })();
+
   /* ---------- Un seul bouton principal par écran ----------
      Le bouton « Réserver » de l'en-tête passe en contour
      dès qu'un autre bouton flamme (ou l'agenda) est visible. */
@@ -64,7 +80,10 @@
   /* ---------- Boutons « data-cal » : lien Cal.com, sinon WhatsApp ---------- */
   (function liensDirects() {
     var wa = String(CONFIG.whatsapp || "").replace(/\D/g, "");
-    var MESSAGES = { magnetisme: "Bonjour Quentin, j'aimerais réserver une séance de magnétisme." };
+    var MESSAGES = {
+      magnetismeNature: "Bonjour Quentin, j'aimerais réserver une séance de magnétisme en pleine nature.",
+      magnetismeDistance: "Bonjour Quentin, j'aimerais réserver une séance de magnétisme par téléphone."
+    };
     $$("[data-cal]").forEach(function (a) {
       var cle = a.getAttribute("data-cal");
       var lien = String(CONFIG["cal" + cle.charAt(0).toUpperCase() + cle.slice(1)] || "").trim()

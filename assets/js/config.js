@@ -12,8 +12,9 @@ window.SITE_CONFIG = {
   calBalade: "",      // [LIEN CAL.COM : Balade Déclic, 1h30, 140 €]
   calParcours: "",    // [LIEN CAL.COM : Parcours Premier Pas, 4 × 1h30, 490 €]
   calDecouverte: "",  // [LIEN CAL.COM : Appel découverte, 15 min, gratuit]
-  calMagnetisme: "",  // [LIEN CAL.COM : Séance de magnétisme]
-                      // Tant que ces deux-là sont vides, leurs boutons ouvrent WhatsApp.
+  calMagnetismeNature: "",   // [LIEN CAL.COM : Magnétisme en pleine nature, 1h, 90 €]
+  calMagnetismeDistance: "", // [LIEN CAL.COM : Magnétisme par téléphone, 1h, 60 €]
+                             // Tant que ces liens sont vides, leurs boutons ouvrent WhatsApp.
 
   /* 2. WHATSAPP (indicatif pays sans le +, sans espaces) */
   whatsapp: "33631794479",
