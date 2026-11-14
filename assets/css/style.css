@@ -1450,3 +1450,19 @@ a:hover { text-decoration-thickness: 3px; }
   }
   .btn:hover, .choix button:hover { transform: none; }
 }
+
+/* ---------- Confirmation d'inscription au test ---------- */
+.merci-inscription {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--nuit);
+  color: var(--creme);
+  border-radius: var(--radius);
+  padding: 22px;
+  outline: none;
+}
+.merci-inscription svg { width: 48px; height: 48px; flex-shrink: 0; }
+.merci-inscription p { margin: 0; color: rgba(255, 246, 234, 0.88); }
+.merci-inscription .merci-titre { font-family: var(--font-titre); font-weight: 700; font-size: 1.3rem; color: var(--creme); margin-bottom: 6px; }

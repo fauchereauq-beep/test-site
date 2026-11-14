@@ -611,9 +611,15 @@
 
       var adresse = (CONFIG.formulaireTest || "").trim();
       function merci() {
-        form.outerHTML = '<p class="surtitre" style="margin-top:24px" tabindex="-1" data-merci>C\'est noté, ' + echapper(prenom) + " ! Tes 10 cartes défi arrivent dans ta boîte mail. Pense à regarder dans les spams.</p>";
+        form.outerHTML = '<div class="merci-inscription" role="status" tabindex="-1" data-merci>' +
+          '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#FFC233"/><path d="M19 33l9 9 18-19" fill="none" stroke="#1E1B3A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          "<div><p class=\"merci-titre\">Merci " + echapper(prenom) + ", c'est envoyé&nbsp;!</p>" +
+          "<p>Tes 10 cartes défi arrivent dans ta boîte mail d'ici 1 minute. Pas de message&nbsp;? Regarde dans les spams ou l'onglet Promotions.</p></div></div>";
         var m = $("[data-merci]", boite);
-        if (m) m.focus({ preventScroll: true });
+        if (m) {
+          m.focus({ preventScroll: true });
+          m.scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "center" });
+        }
       }
       // « no-cors » : le navigateur envoie les données, mais ne nous montre pas la réponse de Brevo
       fetch(adresse, { method: "POST", mode: "no-cors", body: corps }).then(merci, function () {
