@@ -515,7 +515,6 @@
         "<h4>Reçois 10 cartes défi gratuites par e-mail</h4><p class=\"capture-sous\">Un défi concret, et pourquoi il marche. La plupart en moins de 10 minutes.</p>" +
         '<div class="champ"><label for="test-prenom">Ton prénom</label><input id="test-prenom" name="prenom" type="text" autocomplete="given-name" required></div>' +
         '<div class="champ"><label for="test-email">Ton e-mail</label><input id="test-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>' +
-        '<input class="pot-de-miel" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">' +
         '<label class="consentement"><input type="checkbox" name="consentement" required> <span>J\'accepte de recevoir les e-mails de Quentin pour passer à l\'action. Désinscription en un clic. <a href="confidentialite.html">Ce que je fais de tes données</a>.</span></label>' +
         '<p class="capture-erreur" hidden></p>' +
         '<button class="btn btn--nuit" type="submit">Je m\'inscris</button>' +
@@ -594,8 +593,6 @@
         form.consentement.focus();
         return;
       }
-      if (form._gotcha.value) return; // robot
-
       var bouton = $('button[type="submit"]', form);
       bouton.disabled = true;
       bouton.textContent = "Envoi…";
@@ -622,12 +619,23 @@
         }
       }
       // « no-cors » : le navigateur envoie les données, mais ne nous montre pas la réponse de Brevo
-      fetch(adresse, { method: "POST", mode: "no-cors", body: corps }).then(merci, function () {
+      var fini = false;
+      function echec() {
+        if (fini) return;
+        fini = true;
         bouton.disabled = false;
         bouton.textContent = "Je m'inscris";
-        erreur.textContent = "Oups, l'envoi n'est pas passé. Vérifie ta connexion et réessaie.";
+        erreur.textContent = "Oups, l'envoi n'est pas passé. Si tu as un bloqueur de publicités, mets-le en pause sur ce site, puis réessaie.";
         erreur.hidden = false;
-      });
+      }
+      // Sans réponse au bout de 12 secondes, on prévient au lieu de laisser la personne attendre
+      var minuteur = setTimeout(echec, 12000);
+      fetch(adresse, { method: "POST", mode: "no-cors", body: corps }).then(function () {
+        clearTimeout(minuteur);
+        if (fini) return;
+        fini = true;
+        merci();
+      }, function () { clearTimeout(minuteur); echec(); });
     }
 
     var introHTML = boite.innerHTML;
