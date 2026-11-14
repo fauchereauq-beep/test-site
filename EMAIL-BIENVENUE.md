@@ -1,4 +1,10 @@
-# L'e-mail automatique « 5 cartes défi » dans Brevo
+# L'e-mail automatique « 10 cartes défi » dans Brevo
+
+✅ **L'e-mail est déjà créé dans ton Brevo** : modèle n°5, « 10 cartes défi (bienvenue test) ».
+Dans l'automatisation (étape 4 ci-dessous), choisis **« Utiliser un modèle existant »** et sélectionne-le,
+au lieu de coller le texte. La version texte plus bas est l'ancienne (5 cartes), gardée pour mémoire.
+
+---
 
 Il part tout seul à chaque personne qui s'inscrit à la fin du test.
 Durée : 15 minutes. Tant qu'il n'est pas activé, les inscrits ne reçoivent rien.

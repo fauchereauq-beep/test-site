@@ -512,7 +512,7 @@
 
     function htmlCapture() {
       return '<form class="capture" novalidate>' +
-        "<h4>Reçois 5 cartes défi gratuites par e-mail</h4><p class=\"capture-sous\">Une par jour, moins de 10 minutes chacune. Pour passer de l\'idée au premier pas.</p>" +
+        "<h4>Reçois 10 cartes défi gratuites par e-mail</h4><p class=\"capture-sous\">Un défi concret, et pourquoi il marche. La plupart en moins de 10 minutes.</p>" +
         '<div class="champ"><label for="test-prenom">Ton prénom</label><input id="test-prenom" name="prenom" type="text" autocomplete="given-name" required></div>' +
         '<div class="champ"><label for="test-email">Ton e-mail</label><input id="test-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>' +
         '<input class="pot-de-miel" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">' +
@@ -611,7 +611,7 @@
 
       var adresse = (CONFIG.formulaireTest || "").trim();
       function merci() {
-        form.outerHTML = '<p class="surtitre" style="margin-top:24px" tabindex="-1" data-merci>C\'est noté, ' + echapper(prenom) + " ! Tes 5 cartes défi arrivent dans ta boîte mail. Pense à regarder dans les spams.</p>";
+        form.outerHTML = '<p class="surtitre" style="margin-top:24px" tabindex="-1" data-merci>C\'est noté, ' + echapper(prenom) + " ! Tes 10 cartes défi arrivent dans ta boîte mail. Pense à regarder dans les spams.</p>";
         var m = $("[data-merci]", boite);
         if (m) m.focus({ preventScroll: true });
       }
