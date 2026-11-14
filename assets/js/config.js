@@ -1,0 +1,28 @@
+/* ==========================================================
+   RÉGLAGES DU SITE : c'est le seul fichier à modifier
+   pour brancher la réservation et le formulaire du test.
+   Remplace ce qui est entre les guillemets "", rien d'autre.
+   ========================================================== */
+window.SITE_CONFIG = {
+  /* 1. RÉSERVATION CAL.COM
+     Dans Cal.com, ouvre ton type de rendez-vous et copie son lien.
+     Exemple : https://cal.com/quentin-fauchereau/balade-declic
+     Tu peux coller le lien entier ou seulement la fin.
+     Tant que c'est vide, le site affiche un emplacement « à compléter ». */
+  calBalade: "https://cal.com/quentin-fauchereau/balade-declic",      // [LIEN CAL.COM : Balade Déclic, 1h30, 140 €]
+  calParcours: "https://cal.com/quentin-fauchereau/parcours-premier-pas",    // [LIEN CAL.COM : Parcours Premier Pas, 4 × 1h30, 490 €]
+  calDecouverte: "https://cal.com/quentin-fauchereau/appel-decouverte",  // [LIEN CAL.COM : Appel découverte, 15 min, gratuit]
+  calMagnetismeNature: "https://cal.com/quentin-fauchereau/magnetisme-nature",   // [LIEN CAL.COM : Magnétisme en pleine nature, 1h, 90 €]
+  calMagnetismeDistance: "https://cal.com/quentin-fauchereau/magnetisme-telephone", // [LIEN CAL.COM : Magnétisme par téléphone, 1h, 60 €]
+                             // Tant que ces liens sont vides, leurs boutons ouvrent WhatsApp.
+
+  /* 2. WHATSAPP (indicatif pays sans le +, sans espaces) */
+  whatsapp: "33631794479",
+
+  /* 3. FORMULAIRE DU TEST (prénom, e-mail, résultat)
+     Colle ici l'adresse d'envoi fournie par ton service de formulaire.
+     Exemple Formspree : "https://formspree.io/f/abcdwxyz"
+     Tant que c'est vide, le résultat détaillé s'affiche quand même,
+     mais rien n'est envoyé. */
+  formulaireTest: "https://b83933ee.sibforms.com/serve/MUIFABo1eYIYNR5QvmqYQDOiXHiKmTjSguyaMyGBrkn1XuPhl222lt_OOAkajGsDwUzBn5ArqRD0UCvJOQI18SW25sodDJnxUznWmV-NtpLR_VLwlUD7G9ZqRPjtHyW4gGkT4Bd5pribbdqIHsylXDBhJEHgJFcOQISPCwm3Ekz_pOxtKYVq1-__7gK9S-9X8-iGfstgMN6wQun7Tw==" // [SERVICE DE FORMULAIRE : Tally, Formspree ou Brevo]
+};
