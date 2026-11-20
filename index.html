@@ -28,7 +28,7 @@
 
   <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=202611201918">
+  <link rel="stylesheet" href="assets/css/style.css?v=202611201927">
 
   <!-- Mesure d'audience sans cookies (Plausible). À activer au lancement :
        retire les deux tirets de commentaire et mets ton vrai domaine.
@@ -200,7 +200,7 @@
             </button>
           </div>
           <div class="porte-panneau" id="porte-1">
-            <p>Tu as des idées plein la tête, et la peur de te tromper te fige. On marche, on calme ce qui s'emballe, et tu choisis <b>une</b> direction. Tu repars avec ton premier pas, daté.</p>
+            <p>Il est 23&nbsp;h, l'idée revient. Tu te dis «&nbsp;demain&nbsp;». Et demain, la peur de te tromper revient avec elle. En 1h30 de marche, on calme ce qui s'emballe, tu choisis <b>une</b> direction, et tu repars avec ton premier pas, daté.</p>
             <form class="idee-form" id="idee-form" novalidate>
             <label for="idee-champ">Commence ici. Écris l'idée que tu n'oses pas lancer&nbsp;:</label>
             <input id="idee-champ" name="idee" type="text" maxlength="70" autocomplete="off" placeholder="Ouvrir mon atelier de céramique, écrire mon livre…">
@@ -211,13 +211,14 @@
             </div>
           </div>
           <div class="porte-panneau" id="porte-2">
-            <p>Tu avances, mais tu tournes à vide&nbsp;: la tête pleine, le corps fatigué, plus d'élan. On commence par vider&nbsp;: marcher, respirer, déposer ce qui pèse. Puis on relance, doucement, avec un prochain pas clair.</p>
+            <p>Tu te réveilles sans élan. Tu avances par habitude, la tête pleine et le corps vide. Tu ne veux pas tout arrêter&nbsp;: tu veux retrouver le goût d'avancer. On commence par vider&nbsp;: marcher, respirer, déposer ce qui pèse. Puis on recharge, doucement, avec un prochain pas clair.</p>
             <p class="porte-note">Si tu es déjà en arrêt ou en burn-out, commence par voir un médecin.</p>
             <div class="hero-actions">
               <a class="btn btn--primary" href="#reserver">Je souffle et je repars <span class="fleche" aria-hidden="true">→</span></a>
               <a class="lien-geste" href="test.html">Fais le test&nbsp;: où en est ton système nerveux&nbsp;?</a>
             </div>
           </div>
+          <p class="lien-magn-hero">Tu viens pour une séance de magnétisme&nbsp;? <a class="lien-geste" href="magnetisme.html">C'est par ici <span aria-hidden="true">→</span></a></p>
           <ul class="reassurance" aria-label="En bref">
             <li>1h30</li>
             <li>une marche, pas une rando</li>
@@ -301,7 +302,7 @@
       <div class="container">
         <p class="surtitre">Pas de cabinet, pas de divan, pas de gourou</p>
         <h2 id="titre-balade">On marche, on rit, on joue.</h2>
-        <p class="intro">La Balade Déclic&nbsp;: 90 minutes à plat, au pied du Salève, en deux temps. D'abord on vide, ensuite on relance. Fais défiler ou touche une étape.</p>
+        <p class="intro">La Balade Déclic&nbsp;: 90 minutes à plat, au pied du Salève, en trois temps. On fait le point, on rééquilibre, on relance. Fais défiler ou touche une étape.</p>
 
         <div class="balade-grid">
           <div class="balade-panneau">
@@ -354,41 +355,42 @@
 
           <ol class="etapes" id="etapes">
             <li class="etape est-active" data-min="0" aria-current="step">
-              <p class="temps-label">Temps 1 · La vidange</p>
+              <p class="temps-label">Temps 1 · On fait le point</p>
               <div class="etape-temps"><b>0′</b> 10 min</div>
-              <h3><button type="button" class="etape-btn">Accueil en marchant</button></h3>
-              <p>On démarre en marchant, sans rien attendre. Tu poses ce que tu as sur le cœur.</p>
+              <h3><button type="button" class="etape-btn">Pourquoi tu es là</button></h3>
+              <p>Tu me dis ce qui t'amène, avec tes mots. Pas de formulaire, pas de jugement&nbsp;: on marche, tu parles.</p>
             </li>
             <li class="etape" data-min="10">
-              <div class="etape-temps"><b>10′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Déposer ce qui pèse</button></h3>
-              <p>Tout ce qui tourne en boucle sort de ta tête&nbsp;: les idées, les peurs, la fatigue. On le dit, et on le laisse sur le chemin.</p>
+              <div class="etape-temps"><b>10′</b> 5 min</div>
+              <h3><button type="button" class="etape-btn">Ton système nerveux en 2 minutes</button></h3>
+              <p>Je te dis où en est ton système nerveux&nbsp;: en surchauffe, en veille, ou prêt à repartir. Souvent, rien que de le comprendre, ça soulage.</p>
             </li>
-            <li class="etape" data-min="25">
-              <div class="etape-temps"><b>25′</b> 20 min</div>
-              <h3><button type="button" class="etape-btn">Respirer et réguler</button></h3>
-              <p>Respiration, mouvement et rire pour retrouver un corps en sécurité.</p>
+            <li class="etape" data-min="15">
+              <div class="etape-temps"><b>15′</b> 15 min</div>
+              <h3><button type="button" class="etape-btn">Le blocage du jour</button></h3>
+              <p>Avec mes ressentis et la lecture tissulaire, je repère où ça coince dans ton corps aujourd'hui. Un seul blocage&nbsp;: le plus gros.</p>
             </li>
-            <li class="etape" data-min="45">
-              <div class="etape-temps"><b>45′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Ressentis et soin</button></h3>
-              <p>Un soin en magnétisme pour dégager ce qui bloque et ancrer le calme. Tu peux aussi choisir de ne pas le recevoir.</p>
+            <li class="etape" data-min="30">
+              <p class="temps-label">Temps 2 · On rééquilibre</p>
+              <div class="etape-temps"><b>30′</b> 25 min</div>
+              <h3><button type="button" class="etape-btn">Soin et nature</button></h3>
+              <p>Un soin en magnétisme et des exercices dehors pour remettre ton système nerveux à jour. Épuisé&nbsp;? On vide, puis on recharge. Trop d'énergie qui part dans tous les sens&nbsp;? On calme, et on canalise. Tu peux aussi choisir de ne pas recevoir le soin.</p>
             </li>
-            <li class="etape" data-min="60">
-              <p class="temps-label">Temps 2 · La relance</p>
-              <div class="etape-temps"><b>60′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Clarifier et choisir</button></h3>
-              <p>On remet de l'ordre et tu choisis une direction, une seule. Puis tu la joues en impro, comme si elle existait déjà.</p>
+            <li class="etape" data-min="55">
+              <p class="temps-label">Temps 3 · On relance</p>
+              <div class="etape-temps"><b>55′</b> 20 min</div>
+              <h3><button type="button" class="etape-btn">L'arbre-blocage</button></h3>
+              <p>Un arbre devient ton blocage. Tu lui parles, tu lui dis enfin ce que tu n'oses pas dire. Puis tu prends sa place, et tu te réponds. C'est drôle, c'est fort, et ça change ton regard sur ce qui te freine.</p>
             </li>
             <li class="etape" data-min="75">
               <div class="etape-temps"><b>75′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Ton premier pas, daté</button></h3>
-              <p>Tu tires ta carte défi et tu fixes une date. Tu repars avec ton prochain pas, écrit noir sur blanc.</p>
+              <h3><button type="button" class="etape-btn">Ta carte défi</button></h3>
+              <p>Tu tires ta carte défi&nbsp;: un premier pas concret, avec une date. Le mouvement repart là où il s'était arrêté.</p>
             </li>
             <li class="etape etape-fin fond-nuit" data-min="90">
               <div class="etape-temps"><b>90′</b> L'arrivée</div>
-              <h3><button type="button" class="etape-btn">Et après&nbsp;?</button></h3>
-              <p>Une semaine après, on fait le point ensemble.</p>
+              <h3><button type="button" class="etape-btn">L'après</button></h3>
+              <p>Le premier pas, c'est l'élan. Les suivants, c'est la régularité. Une semaine après, on fait le point ensemble, et on ajuste.</p>
               <p style="margin-top:18px"><a class="btn btn--primary" href="#reserver">Allez, je me lance</a></p>
             </li>
           </ol>
@@ -461,11 +463,22 @@
           <a class="btn btn--ghost" href="#reserver" data-formule="decouverte">On s'appelle&nbsp;?</a>
         </div>
 
-        <p class="pont-magnetisme">Tu viens pour une séance de magnétisme&nbsp;? Elle a sa page&nbsp;: 1h, en pleine nature de mai à septembre (90&nbsp;€), par téléphone d'octobre à avril (60&nbsp;€). <a class="lien-geste" href="magnetisme.html">Voir le magnétisme <span aria-hidden="true">→</span></a></p>
 
         <div class="offres-pied">
           <p class="mention-sante">Les séances ne sont pas des actes médicaux et ne remplacent pas un avis ou un traitement médical.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= MAGNÉTISME ================= -->
+    <section class="section section--fine fond-nuit" id="magnetisme-accueil" aria-labelledby="titre-magn-accueil">
+      <div class="container bandeau-magn">
+        <div>
+          <p class="surtitre">Séance de magnétisme · 1h</p>
+          <h2 id="titre-magn-accueil">Pas de projet à lancer&nbsp;? Juste besoin de souffler&nbsp;?</h2>
+          <p>Une séance de magnétisme d'1h, sans cabinet&nbsp;: en pleine nature à la Maison du Salève de mai à septembre (90&nbsp;€ ou CHF), par téléphone d'octobre à avril (60&nbsp;€ ou CHF). Pour souffler, mieux dormir, apaiser les douleurs ou y voir plus clair.</p>
+        </div>
+        <a class="btn btn--ghost" href="magnetisme.html">Découvrir les séances <span class="fleche" aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -481,7 +494,7 @@
           <p>Toute ma vie, je me suis senti hors du cadre. Trop d'idées, trop d'élan, et cette impression d'attendre une autorisation qui ne venait jamais, jusqu'au jour où j'ai compris que c'était à moi de me la donner.</p>
           <p>Je connais la tête en pagaille, la peur qui serre le ventre, l'envie d'oser qui reste coincée. Ce qui m'a manqué, c'est quelqu'un qui voie mon potentiel et me dise&nbsp;: vas-y, on y va ensemble, je suis là.</p>
           <p>Aujourd'hui, c'est ce que je suis pour les autres.</p>
-          <p class="citation">Je ne répare pas ta vie. Je ne te pousse pas à aller plus vite&nbsp;: <span class="surligne">je t'aide à tenir la distance.</span></p>
+          <p class="citation">Je ne répare pas ta vie. Je ne te pousse pas&nbsp;: <span class="surligne">je marche à côté de toi</span>, jusqu'à ce que tu n'aies plus besoin de moi.</p>
           <p>Tout a changé en 2023, après le départ de ma grand-mère Odette&nbsp;: plus de sensibilité, des ressentis plus fins. Depuis deux ans, je mets ce que je ressens au service des autres.</p>
           <p>Je suis accompagnateur holistique&nbsp;: je travaille avec le corps, le jeu et le magnétisme. Le cabinet, ce n'est pas pour moi. Je crois qu'on se débloque en mouvement, alors on sort&nbsp;: on marche, on rit, et le soin se fait dehors. L'hiver, je propose aussi <a class="lien-geste" href="magnetisme.html">des séances de magnétisme à distance</a>.</p>
 
@@ -596,10 +609,11 @@
         <div class="reserver-entete">
           <p class="surtitre">Réserver</p>
           <h2 id="titre-reserver">Le plus dur, c'est ce clic. Après, on marche.</h2>
+          <p class="reserver-choc">Dans un an, tu seras au même endroit, ou un an plus loin. Ça commence par 1h30.</p>
           <p class="intro">Trois petites questions au moment de réserver, pour que la balade parte de toi&nbsp;:</p>
           <ol class="gris">
-            <li>Quelle idée ou quel projet te trotte dans la tête en ce moment, même flou&nbsp;?</li>
-            <li>Qu'est-ce qui t'empêche de t'y mettre&nbsp;?</li>
+            <li>Qu'est-ce qui t'amène&nbsp;: une idée qui n'avance pas, une fatigue qui ne passe pas, ou les deux&nbsp;?</li>
+            <li>Qu'est-ce qui te freine ou te pèse le plus en ce moment&nbsp;?</li>
             <li>À la fin de la balade, qu'est-ce qui ferait que tu repartes content&nbsp;?</li>
           </ol>
           <p class="garantie garantie--ligne"><strong>Garantie premier pas</strong>Si tu repars sans élan ni prochain pas clair, la séance suivante est offerte.</p>
@@ -632,7 +646,7 @@
             <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="29" cy="35" r="26" fill="#FFC233"/><circle cx="29" cy="35" r="12" fill="none" stroke="#1E1B3A" stroke-width="6"/><path d="M35 41 L44 50" stroke="#1E1B3A" stroke-width="6" stroke-linecap="round"/><path d="M51 2 L54.2 10.3 L62.5 13.5 L54.2 16.7 L51 25 L47.8 16.7 L39.5 13.5 L47.8 10.3 Z" fill="#FF5A1F"/></svg>
             <span class="logo-texte">Quentin Fauchereau<small>Accompagnateur holistique</small></span>
           </a>
-          <p class="footer-signature">Je ne te pousse pas à aller plus vite. Je t'aide à tenir la distance.</p>
+          <p class="footer-signature">Je ne te pousse pas. Je marche à côté de toi, jusqu'à ce que tu n'aies plus besoin de moi.</p>
           <p>Crée ce qui t'anime&nbsp;!</p>
         </div>
         <div>
@@ -669,8 +683,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/config.js?v=202611201918"></script>
-  <script src="assets/js/main.js?v=202611201918" defer></script>
+  <script src="assets/js/config.js?v=202611201927"></script>
+  <script src="assets/js/main.js?v=202611201927" defer></script>
   <!-- Bouton WhatsApp flottant -->
   <a class="whatsapp-flottant" href="https://wa.me/33631794479?text=Bonjour%20Quentin%20!" target="_blank" rel="noopener" aria-label="Écrire à Quentin sur WhatsApp" title="Écrire sur WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>

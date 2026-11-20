@@ -1515,3 +1515,22 @@ a:hover { text-decoration-thickness: 3px; }
   font-weight: 600;
   font-size: .82rem;
 }
+
+/* ---------- Accès au magnétisme depuis l'accueil ---------- */
+.lien-magn-hero { margin: 4px 0 18px; font-size: .98rem; }
+.bandeau-magn { display: grid; gap: 20px; align-items: center; }
+.bandeau-magn h2 { font-size: clamp(1.5rem, 5vw, 2.1rem); margin-bottom: 8px; }
+.bandeau-magn p:last-child { margin: 0; color: rgba(255, 246, 234, 0.85); max-width: 60ch; }
+.bandeau-magn .btn { justify-self: start; }
+@media (min-width: 820px) { .bandeau-magn { grid-template-columns: 1fr auto; gap: 40px; } }
+
+/* ---------- Réserver : la phrase qui fait réfléchir ---------- */
+.reserver-choc {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 4.2vw, 1.5rem);
+  line-height: 1.3;
+  color: var(--soleil);
+  margin: 0 0 16px;
+  max-width: 34ch;
+}
