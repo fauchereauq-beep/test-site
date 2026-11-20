@@ -32,25 +32,25 @@ Accompagnateur holistique et magnétiseur, au pied du Salève, près de Genève.
 
 | Champ | À mettre |
 |---|---|
-| Titre (Title) | `Balade Déclic · 1h30 au pied du Salève` |
+| Titre (Title) | `Balade Déclic · 1h au pied du Salève` |
 | URL | `balade-declic` |
-| Durée (Duration) | `90` minutes |
+| Durée (Duration) | `60` minutes |
 | Lieu (Location) | En personne, adresse de l'organisateur (In Person, Organizer Address) : `Maison du Salève, 775 route de Mikerne, 74160 Présilly` |
 
 **Description :**
 ```
-1h30 de marche à plat, en solo, au pied du Salève. On marche, on rit, on joue, et tu repars avec ton premier pas concret, à faire dans la semaine.
+Une heure de marche à plat, en solo, au pied du Salève. Tu repars avec un prochain pas clair, à faire dans la semaine.
 
-Au programme : accueil-jeu, ton état du moment, régulation en marchant, soin en magnétisme (facultatif), impro en live, et ta carte défi. Une semaine après, on fait un point de 10 à 15 minutes.
+Au programme, en trois temps. On fait le point : pourquoi tu es là, ton système nerveux en 2 minutes, le blocage du jour. On rééquilibre : soin en magnétisme (facultatif) et exercices dans la nature. On relance : l'impro de l'arbre-blocage, puis ta carte défi. Une semaine après, on fait le point ensemble (10 à 15 minutes).
 
-Prix : 140 €, en espèces ou par virement.
+Prix : 90 €, en espèces ou par virement, le jour de la séance. Si tu continues avec le Parcours Premier Pas dans les 30 jours, ces 90 € sont déduits.
 
-Garantie premier pas : si tu repars sans ton premier pas, ou sans un minimum d'élan, ta prochaine séance est offerte.
+Garantie premier pas : si tu repars sans élan ni prochain pas clair, la séance suivante est offerte.
 
 Rendez-vous : Maison du Salève, 775 route de Mikerne, 74160 Présilly. Parking une centaine de mètres avant le bâtiment.
 À prévoir : de bonnes chaussures et une tenue selon la météo.
-S'il pleut : on reporte, ou on se retrouve dans un lieu à l'abri choisi ensemble à l'avance.
-Annulation : [TA RÈGLE D'ANNULATION]
+S'il pleut : on reporte, on passe à distance, ou on se retrouve dans un lieu à l'abri choisi ensemble à l'avance.
+Annulation : gratuite jusqu'à 48 h avant. Après, la séance est due.
 
 Les séances ne sont pas des actes médicaux et ne remplacent pas un avis ou un traitement médical.
 ```
@@ -60,8 +60,8 @@ Garde « Nom » et « E-mail », puis ajoute :
 
 | Question | Type | Obligatoire ? |
 |---|---|---|
-| `Quelle idée ou quel projet te trotte dans la tête en ce moment, même flou ?` | Texte long | Oui |
-| `Qu'est-ce qui t'empêche de t'y mettre ?` | Texte long | Oui |
+| `Qu'est-ce qui t'amène : une idée qui n'avance pas, une fatigue qui ne passe pas, ou les deux ?` | Texte long | Oui |
+| `Qu'est-ce qui te freine ou te pèse le plus en ce moment ?` | Texte long | Oui |
 | `À la fin de la balade, qu'est-ce qui ferait que tu repartes content ?` | Texte long | Non |
 | `Ton numéro WhatsApp (pour te prévenir s'il pleut)` | Téléphone | Oui |
 
@@ -87,14 +87,14 @@ Garde « Nom » et « E-mail », puis ajoute :
 
 **Description :**
 ```
-Quatre séances de 1h30, en solo, au pied du Salève, pour sortir ton projet de ta tête. Tu réserves ici ta première séance : on cale les trois suivantes ensemble.
+Quatre séances de 1h30, en solo, au pied du Salève, pour trouver le projet qui te ressemble vraiment et le mettre sur les rails. Tu réserves ici ta première séance : on cale les trois suivantes ensemble.
 
-Inclus : quatre balades, un vocal récapitulatif après chacune, un suivi sur WhatsApp entre les séances.
+Inclus : quatre séances de 1h30, un vocal récapitulatif après chacune, un suivi sur WhatsApp entre les séances.
 
-La promesse : en quatre balades, ton projet sort de ta tête. Tu as fait sa première version concrète et tu l'as montrée à quelqu'un.
+La promesse : en quatre séances, tu repars avec la première version concrète de ton projet, déjà montrée à quelqu'un.
 
-Prix : 490 € au lieu de 560 €, en espèces ou par virement.
-Les quatre séances sont à utiliser dans un délai de [DURÉE DE VALIDITÉ].
+Prix : 590 €, en espèces ou par virement. Tu as fait une Balade Déclic dans les 30 derniers jours ? Ses 90 € sont déduits.
+Les quatre séances sont à utiliser dans un délai de 2 mois.
 
 Rendez-vous : Maison du Salève, 775 route de Mikerne, 74160 Présilly. Parking une centaine de mètres avant le bâtiment.
 S'il pleut : on reporte, ou on se retrouve dans un lieu à l'abri choisi ensemble à l'avance.

@@ -4,7 +4,7 @@ Tout ce qui est entre crochets `[ ]` sur le site est surligné en jaune rayé : 
 Voici la liste, **dans l'ordre où je te conseille de la faire**.
 
 ## ✅ Déjà fait
-- Prix : Balade Déclic 140 €, Parcours 490 € (4 × 1h30), magnétisme 90 € en nature / 60 € par téléphone
+- Prix : Balade Déclic 90 € (1h), Parcours 590 € (4 × 1h30, balade déduite dans les 30 jours), magnétisme 90 € en nature / 60 € par téléphone
 - Séances en solo, garantie premier pas, appel découverte gratuit
 - WhatsApp, Instagram, lieu (Maison du Salève), paiement (espèces ou virement), météo
 - Ton histoire (Odette, 2023) et tes repères : 2 ans, 50+ séances, 30+ personnes

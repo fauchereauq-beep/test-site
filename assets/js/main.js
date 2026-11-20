@@ -229,6 +229,7 @@
     var titres = etapes.map(function (li) { return $(".etape-btn", li).textContent.trim(); });
 
     var total = sentier.getTotalLength();
+    var DUREE = minutes[minutes.length - 1] || 60; // durée de la balade, lue sur la dernière étape
     var ARC = 2 * Math.PI * 33;
     var SVGNS = "http://www.w3.org/2000/svg";
 
@@ -237,7 +238,8 @@
 
     // Graduations du cadran : un trait toutes les 5 minutes, un plus long tous les quarts d'heure
     var grad = $("#graduations");
-    for (var i = 0; i < 18; i++) {
+    var nbTraits = Math.round(DUREE / 5);
+    for (var i = 0; i < nbTraits; i++) {
       var trait = document.createElementNS(SVGNS, "line");
       var majeur = i % 3 === 0;
       trait.setAttribute("x1", "50"); trait.setAttribute("x2", "50");
@@ -245,13 +247,13 @@
       trait.setAttribute("stroke", "#1E1B3A");
       trait.setAttribute("stroke-width", majeur ? "2.6" : "1.4");
       trait.setAttribute("stroke-linecap", "round");
-      trait.setAttribute("transform", "rotate(" + (i * 20) + " 50 50)");
+      trait.setAttribute("transform", "rotate(" + (i * 360 / nbTraits) + " 50 50)");
       grad.appendChild(trait);
     }
 
     // Repères d'étapes sur le sentier (cliquables à la souris ; au clavier on passe par les cartes)
     var reperes = minutes.map(function (m, k) {
-      var p = sentier.getPointAtLength(total * m / 90);
+      var p = sentier.getPointAtLength(total * m / DUREE);
       var g = document.createElementNS(SVGNS, "g");
       g.setAttribute("class", "etape-repere");
       var c = document.createElementNS(SVGNS, "circle");
@@ -272,9 +274,9 @@
       var p = sentier.getPointAtLength(l);
       marcheur.setAttribute("transform", "translate(" + p.x.toFixed(1) + " " + p.y.toFixed(1) + ")");
       fait.style.strokeDashoffset = (total - l).toFixed(1);
-      var min = l / total * 90;
-      aiguille.setAttribute("transform", "rotate(" + (min / 90 * 360).toFixed(1) + " 50 50)");
-      arc.style.strokeDashoffset = (ARC * (1 - min / 90)).toFixed(1);
+      var min = l / total * DUREE;
+      aiguille.setAttribute("transform", "rotate(" + (min / DUREE * 360).toFixed(1) + " 50 50)");
+      arc.style.strokeDashoffset = (ARC * (1 - min / DUREE)).toFixed(1);
       cadranValeur.textContent = Math.round(min);
     }
 
@@ -309,11 +311,11 @@
       reperes.forEach(function (r, k) { r.classList.toggle("est-passee", k <= index); });
       var dernier = index === etapes.length - 1;
       label.textContent = dernier
-        ? "L'arrivée · 90 min"
+        ? "L'arrivée · " + DUREE + " min"
         : "Étape " + (index + 1) + "/" + (etapes.length - 1) + " · " + titres[index];
       btnPrec.disabled = index === 0;
       btnSuiv.disabled = dernier;
-      animerVers(total * minutes[index] / 90);
+      animerVers(total * minutes[index] / DUREE);
       if (defiler) {
         ignorerObservationJusqua = Date.now() + 900;
         etapes[index].scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "center" });

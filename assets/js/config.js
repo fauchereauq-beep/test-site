@@ -9,8 +9,8 @@ window.SITE_CONFIG = {
      Exemple : https://cal.com/quentin-fauchereau/balade-declic
      Tu peux coller le lien entier ou seulement la fin.
      Tant que c'est vide, le site affiche un emplacement « à compléter ». */
-  calBalade: "https://cal.com/quentin-fauchereau/balade-declic",      // [LIEN CAL.COM : Balade Déclic, 1h30, 140 €]
-  calParcours: "https://cal.com/quentin-fauchereau/parcours-premier-pas",    // [LIEN CAL.COM : Parcours Premier Pas, 4 × 1h30, 490 €]
+  calBalade: "https://cal.com/quentin-fauchereau/balade-declic",      // [LIEN CAL.COM : Balade Déclic, 1h, 90 €]
+  calParcours: "https://cal.com/quentin-fauchereau/parcours-premier-pas",    // [LIEN CAL.COM : Parcours Premier Pas, 4 × 1h30, 590 €]
   calDecouverte: "https://cal.com/quentin-fauchereau/appel-decouverte",  // [LIEN CAL.COM : Appel découverte, 15 min, gratuit]
   calMagnetismeNature: "https://cal.com/quentin-fauchereau/magnetisme-nature",   // [LIEN CAL.COM : Magnétisme en pleine nature, 1h, 90 €]
   calMagnetismeDistance: "https://cal.com/quentin-fauchereau/magnetisme-telephone", // [LIEN CAL.COM : Magnétisme par téléphone, 1h, 60 €]
