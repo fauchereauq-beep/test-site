@@ -1537,3 +1537,15 @@ a:hover { text-decoration-thickness: 3px; }
 
 /* Chiffres : la version mobile doit venir après la règle de base pour s'appliquer */
 @media (max-width: 400px) { .chiffres li { padding: 12px 4px; font-size: .78rem; -webkit-hyphens: auto; hyphens: auto; } .chiffres b { font-size: 1.35rem; } }
+
+/* ---------- Qui je suis : la chute horlogère ---------- */
+.qui-mouvement {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  line-height: 1.35;
+  color: var(--nuit);
+  border-left: 4px solid var(--flamme);
+  padding-left: 14px;
+}
+.qui-mouvement b { color: var(--flamme-texte); }
