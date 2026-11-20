@@ -1466,3 +1466,52 @@ a:hover { text-decoration-thickness: 3px; }
 .merci-inscription svg { width: 48px; height: 48px; flex-shrink: 0; }
 .merci-inscription p { margin: 0; color: rgba(255, 246, 234, 0.88); }
 .merci-inscription .merci-titre { font-family: var(--font-titre); font-weight: 700; font-size: 1.3rem; color: var(--creme); margin-bottom: 6px; }
+
+/* ---------- Accueil : les deux portes ---------- */
+.portes { display: grid; gap: 12px; margin: 0 0 16px; }
+.porte {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  gap: 4px;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid var(--nuit);
+  border-radius: var(--radius);
+  padding: 18px 52px 18px 20px;
+  transition: background-color .2s ease, transform .15s ease;
+}
+.porte::after {
+  content: "";
+  position: absolute; right: 20px; top: 50%;
+  width: 10px; height: 10px; margin-top: -7px;
+  border-right: 3px solid var(--nuit); border-bottom: 3px solid var(--nuit);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.porte:hover { transform: translateY(-2px); }
+.porte:focus-visible { outline: 3px solid var(--nuit); outline-offset: 3px; }
+.porte[aria-expanded="true"] { background: var(--soleil); }
+.porte[aria-expanded="true"]::after { transform: rotate(-135deg); margin-top: -2px; }
+.porte-titre { font-family: var(--font-titre); font-weight: 700; font-size: 1.2rem; line-height: 1.2; }
+.porte-sous { color: var(--gris-nuit); }
+.porte[aria-expanded="true"] .porte-sous { color: var(--nuit); }
+@media (min-width: 560px) { .portes { grid-template-columns: 1fr 1fr; } }
+.porte-panneau { background: var(--sable); border-radius: var(--radius); padding: 20px; margin: 0 0 18px; display: grid; gap: 14px; }
+.porte-panneau p { margin: 0; }
+.porte-panneau .idee-form { margin: 0; }
+.porte-panneau .hero-actions .btn--primary { width: auto; }
+.porte-note { font-size: .92rem; color: var(--gris-nuit); }
+
+/* ---------- Balade : les deux temps ---------- */
+.temps-label {
+  display: inline-block;
+  margin: 0 0 10px !important;
+  background: var(--nuit);
+  color: var(--soleil) !important;
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-weight: 600;
+  font-size: .82rem;
+}

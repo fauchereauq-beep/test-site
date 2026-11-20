@@ -96,6 +96,27 @@
     });
   })();
 
+  /* ---------------- Les deux portes de l'accueil ---------------- */
+  (function portes() {
+    var boutons = $$("[data-porte]");
+    if (!boutons.length) return;
+    var panneaux = boutons.map(function (b) { return document.getElementById(b.getAttribute("aria-controls")); });
+    panneaux.forEach(function (p) { p.hidden = true; });
+    boutons.forEach(function (b, i) {
+      b.addEventListener("click", function () {
+        var ouvrir = b.getAttribute("aria-expanded") !== "true";
+        boutons.forEach(function (x, k) {
+          var actif = ouvrir && k === i;
+          x.setAttribute("aria-expanded", String(actif));
+          panneaux[k].hidden = !actif;
+        });
+        if (ouvrir && panneaux[i].getBoundingClientRect().bottom > window.innerHeight) {
+          panneaux[i].scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "nearest" });
+        }
+      });
+    });
+  })();
+
   /* ---------------- Tire ta carte défi ---------------- */
   (function cartesDefi() {
     var zone = $("#carte-defi");

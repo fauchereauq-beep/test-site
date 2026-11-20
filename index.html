@@ -6,7 +6,7 @@
 
 
   <title>Quentin Fauchereau · Accompagnateur holistique et magnétiseur près de Genève</title>
-  <meta name="description" content="Accompagnateur holistique près de Genève : 1h30 de marche à plat au pied du Salève (Présilly) pour passer à l'action. Corps, jeu et magnétisme, près de Saint-Julien-en-Genevois.">
+  <meta name="description" content="Accompagnateur holistique près de Genève : 1h30 de marche à plat au pied du Salève pour te remettre en mouvement, que tu aies peur de te lancer ou que tu sois à bout.">
   <link rel="canonical" href="https://quentinfauchereau.com/">
   <meta name="theme-color" content="#FFF6EA">
 
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Quentin Fauchereau">
-  <meta property="og:title" content="Ton projet prend la poussière. On le sort faire un tour ?">
+  <meta property="og:title" content="Je te remets en mouvement.">
   <meta property="og:description" content="Une marche de 1h30, à plat, au pied du Salève, pour passer de la tête en pagaille au premier pas concret. Près de Genève.">
   <meta property="og:url" content="https://quentinfauchereau.com/">
   <meta property="og:image" content="https://quentinfauchereau.com/assets/img/og-image.png">
@@ -28,7 +28,7 @@
 
   <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=202611141241">
+  <link rel="stylesheet" href="assets/css/style.css?v=202611201918">
 
   <!-- Mesure d'audience sans cookies (Plausible). À activer au lancement :
        retire les deux tirets de commentaire et mets ton vrai domaine.
@@ -119,7 +119,7 @@
           { "@type": "Question", "name": "Où se passe la balade ?", "acceptedAnswer": { "@type": "Answer", "text": "Au départ de la Maison du Salève, 775 route de Mikerne, 74160 Présilly, au pied du Salève, près de Saint-Julien-en-Genevois et de Genève." } },
           { "@type": "Question", "name": "Le magnétisme, je dois y croire ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tu ressens ce que tu ressens, sans obligation. Tu peux aussi choisir de ne pas recevoir le soin." } },
           { "@type": "Question", "name": "Est-ce une thérapie ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est un accompagnement vers l'action. Il ne remplace pas un suivi médical ou psychologique." } },
-          { "@type": "Question", "name": "Et si je repars sans rien ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est la garantie premier pas : si tu repars sans ton premier pas, ou sans un minimum d'élan, ta prochaine séance est offerte." } },
+          { "@type": "Question", "name": "Et si je repars sans rien ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est la garantie premier pas : si tu repars sans élan ni prochain pas clair, la séance suivante est offerte." } },
           { "@type": "Question", "name": "Et si j'ai un empêchement ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu peux annuler ou reporter gratuitement jusqu'à 48 h avant. Passé ce délai, la séance est due." } },
           { "@type": "Question", "name": "Comment payer ?", "acceptedAnswer": { "@type": "Answer", "text": "En espèces ou par virement." } },
           { "@type": "Question", "name": "Ce que je dis reste confidentiel ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, toujours." } }
@@ -187,16 +187,36 @@
       <div class="container hero-grid">
         <div>
           <p class="surtitre">Balade Déclic · au pied du Salève</p>
-          <h1 id="titre-accueil">Ton projet prend la poussière. On le sort <span class="surligne">faire un tour&nbsp;?</span></h1>
-          <p class="hero-sous-titre">1h30 de marche à plat, au pied du Salève. On rit, on lâche le frein, et tu repars avec ton premier pas concret. Celui que tu repousses depuis des mois.</p>
-          <form class="idee-form" id="idee-form" novalidate>
+          <h1 id="titre-accueil">Je te remets <span class="surligne">en mouvement.</span></h1>
+          <p class="hero-sous-titre">1h30 de marche à plat, au pied du Salève, à 15 min de Genève. Choisis ta porte&nbsp;:</p>
+          <div class="portes">
+            <button type="button" class="porte" data-porte aria-expanded="false" aria-controls="porte-1">
+              <span class="porte-titre">«&nbsp;J'ai peur de me lancer.&nbsp;»</span>
+              <span class="porte-sous">Trop d'idées, peur de choisir la mauvaise.</span>
+            </button>
+            <button type="button" class="porte" data-porte aria-expanded="false" aria-controls="porte-2">
+              <span class="porte-titre">«&nbsp;Je suis à bout.&nbsp;»</span>
+              <span class="porte-sous">Dans le brouillard, je me sens vide.</span>
+            </button>
+          </div>
+          <div class="porte-panneau" id="porte-1">
+            <p>Tu as des idées plein la tête, et la peur de te tromper te fige. On marche, on calme ce qui s'emballe, et tu choisis <b>une</b> direction. Tu repars avec ton premier pas, daté.</p>
+            <form class="idee-form" id="idee-form" novalidate>
             <label for="idee-champ">Commence ici. Écris l'idée que tu n'oses pas lancer&nbsp;:</label>
             <input id="idee-champ" name="idee" type="text" maxlength="70" autocomplete="off" placeholder="Ouvrir mon atelier de céramique, écrire mon livre…">
             <button class="btn btn--nuit" type="submit">Tire ma carte défi</button>
           </form>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>
-            <a class="lien-geste" href="#balade">Voir la balade</a>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="#reserver">Allez, je me lance <span class="fleche" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="porte-panneau" id="porte-2">
+            <p>Tu avances, mais tu tournes à vide&nbsp;: la tête pleine, le corps fatigué, plus d'élan. On commence par vider&nbsp;: marcher, respirer, déposer ce qui pèse. Puis on relance, doucement, avec un prochain pas clair.</p>
+            <p class="porte-note">Si tu es déjà en arrêt ou en burn-out, commence par voir un médecin.</p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="#reserver">Je souffle et je repars <span class="fleche" aria-hidden="true">→</span></a>
+              <a class="lien-geste" href="test.html">Fais le test&nbsp;: où en est ton système nerveux&nbsp;?</a>
+            </div>
           </div>
           <ul class="reassurance" aria-label="En bref">
             <li>1h30</li>
@@ -223,10 +243,8 @@
           <article class="balise">
             <h3><span class="balise-marque balise-marque--oui" aria-hidden="true"></span>Bonne direction</h3>
             <ul>
-              <li>Tu as une idée en tête, et tu n'oses pas.</li>
-              <li>Tu doutes, tu repousses, tu attends le bon moment.</li>
-              <li>Tu as dix projets et aucun de lancé.</li>
-              <li>Tu veux bouger, pas seulement en parler.</li>
+              <li><b>«&nbsp;J'ai peur de me lancer.&nbsp;»</b> Tu as une ou plusieurs idées, mais tu as peur de te lancer, ou de choisir la mauvaise direction.</li>
+              <li><b>«&nbsp;Je suis à bout.&nbsp;»</b> Créateur, indépendant ou entrepreneur, tu es en plein projet, mais vidé, dans le brouillard.</li>
             </ul>
           </article>
           <article class="balise">
@@ -234,6 +252,7 @@
             <ul>
               <li>Tu cherches une thérapie ou un suivi médical&nbsp;: ce n'est pas mon métier.</li>
               <li>Tu veux quelqu'un qui fasse à ta place.</li>
+              <li>Si tu es déjà en arrêt ou en burn-out, commence par voir un médecin.</li>
             </ul>
           </article>
         </div>
@@ -282,7 +301,7 @@
       <div class="container">
         <p class="surtitre">Pas de cabinet, pas de divan, pas de gourou</p>
         <h2 id="titre-balade">On marche, on rit, on joue.</h2>
-        <p class="intro">La Balade Déclic&nbsp;: 90 minutes à plat, au pied du Salève. Six étapes, une arrivée&nbsp;: ton premier pas. Fais défiler ou touche une étape.</p>
+        <p class="intro">La Balade Déclic&nbsp;: 90 minutes à plat, au pied du Salève, en deux temps. D'abord on vide, ensuite on relance. Fais défiler ou touche une étape.</p>
 
         <div class="balade-grid">
           <div class="balade-panneau">
@@ -335,34 +354,36 @@
 
           <ol class="etapes" id="etapes">
             <li class="etape est-active" data-min="0" aria-current="step">
+              <p class="temps-label">Temps 1 · La vidange</p>
               <div class="etape-temps"><b>0′</b> 10 min</div>
-              <h3><button type="button" class="etape-btn">Accueil-jeu</button></h3>
-              <p>« Prêt à jouer&nbsp;? » On choisit l'idée qui te met le plus en joie.</p>
+              <h3><button type="button" class="etape-btn">Accueil en marchant</button></h3>
+              <p>On démarre en marchant, sans rien attendre. Tu poses ce que tu as sur le cœur.</p>
             </li>
             <li class="etape" data-min="10">
-              <div class="etape-temps"><b>10′</b> 10 min</div>
-              <h3><button type="button" class="etape-btn">Ton état du moment</button></h3>
-              <p>On repère ce qui te bloque le plus aujourd'hui. Un seul blocage.</p>
+              <div class="etape-temps"><b>10′</b> 15 min</div>
+              <h3><button type="button" class="etape-btn">Déposer ce qui pèse</button></h3>
+              <p>Tout ce qui tourne en boucle sort de ta tête&nbsp;: les idées, les peurs, la fatigue. On le dit, et on le laisse sur le chemin.</p>
             </li>
-            <li class="etape" data-min="20">
-              <div class="etape-temps"><b>20′</b> 20 min</div>
-              <h3><button type="button" class="etape-btn">Régulation en marchant</button></h3>
+            <li class="etape" data-min="25">
+              <div class="etape-temps"><b>25′</b> 20 min</div>
+              <h3><button type="button" class="etape-btn">Respirer et réguler</button></h3>
               <p>Respiration, mouvement et rire pour retrouver un corps en sécurité.</p>
             </li>
-            <li class="etape" data-min="40">
-              <div class="etape-temps"><b>40′</b> 20 min</div>
+            <li class="etape" data-min="45">
+              <div class="etape-temps"><b>45′</b> 15 min</div>
               <h3><button type="button" class="etape-btn">Ressentis et soin</button></h3>
-              <p>Un soin en magnétisme pour dégager le blocage et ancrer la sécurité ou l'élan. Tu peux aussi choisir de ne pas le recevoir.</p>
+              <p>Un soin en magnétisme pour dégager ce qui bloque et ancrer le calme. Tu peux aussi choisir de ne pas le recevoir.</p>
             </li>
             <li class="etape" data-min="60">
+              <p class="temps-label">Temps 2 · La relance</p>
               <div class="etape-temps"><b>60′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Impro en live</button></h3>
-              <p>Tu vis ton projet comme s'il existait déjà.</p>
+              <h3><button type="button" class="etape-btn">Clarifier et choisir</button></h3>
+              <p>On remet de l'ordre et tu choisis une direction, une seule. Puis tu la joues en impro, comme si elle existait déjà.</p>
             </li>
             <li class="etape" data-min="75">
               <div class="etape-temps"><b>75′</b> 15 min</div>
-              <h3><button type="button" class="etape-btn">Carte défi</button></h3>
-              <p>Tu tires ton défi&nbsp;: ton premier pas, à faire dans la semaine.</p>
+              <h3><button type="button" class="etape-btn">Ton premier pas, daté</button></h3>
+              <p>Tu tires ta carte défi et tu fixes une date. Tu repars avec ton prochain pas, écrit noir sur blanc.</p>
             </li>
             <li class="etape etape-fin fond-nuit" data-min="90">
               <div class="etape-temps"><b>90′</b> L'arrivée</div>
@@ -414,7 +435,7 @@
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ta carte défi</li>
               <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFC233"/><path d="M7 12.5l3.2 3L17 9" fill="none" stroke="#1E1B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Un point de 10 à 15 minutes une semaine après</li>
             </ul>
-            <p class="garantie"><strong>Garantie premier pas</strong>Si tu repars sans ton premier pas, ou sans un minimum d'élan, ta prochaine séance est offerte.</p>
+            <p class="garantie"><strong>Garantie premier pas</strong>Si tu repars sans élan ni prochain pas clair, la séance suivante est offerte.</p>
             <a class="btn btn--primary btn--block" href="#reserver" data-formule="balade">Allez, je me lance</a>
           </article>
 
@@ -460,7 +481,7 @@
           <p>Toute ma vie, je me suis senti hors du cadre. Trop d'idées, trop d'élan, et cette impression d'attendre une autorisation qui ne venait jamais, jusqu'au jour où j'ai compris que c'était à moi de me la donner.</p>
           <p>Je connais la tête en pagaille, la peur qui serre le ventre, l'envie d'oser qui reste coincée. Ce qui m'a manqué, c'est quelqu'un qui voie mon potentiel et me dise&nbsp;: vas-y, on y va ensemble, je suis là.</p>
           <p>Aujourd'hui, c'est ce que je suis pour les autres.</p>
-          <p class="citation">Je ne répare pas ta vie. Je vois la <span class="surligne">Formule&nbsp;1</span> en toi, et je te mets sur la piste.</p>
+          <p class="citation">Je ne répare pas ta vie. Je ne te pousse pas à aller plus vite&nbsp;: <span class="surligne">je t'aide à tenir la distance.</span></p>
           <p>Tout a changé en 2023, après le départ de ma grand-mère Odette&nbsp;: plus de sensibilité, des ressentis plus fins. Depuis deux ans, je mets ce que je ressens au service des autres.</p>
           <p>Je suis accompagnateur holistique&nbsp;: je travaille avec le corps, le jeu et le magnétisme. Le cabinet, ce n'est pas pour moi. Je crois qu'on se débloque en mouvement, alors on sort&nbsp;: on marche, on rit, et le soin se fait dehors. L'hiver, je propose aussi <a class="lien-geste" href="magnetisme.html">des séances de magnétisme à distance</a>.</p>
 
@@ -544,7 +565,7 @@
           </details>
           <details>
             <summary>Et si je repars sans rien&nbsp;?</summary>
-            <div class="reponse"><p>C'est la garantie premier pas&nbsp;: si tu repars sans ton premier pas, ou sans un minimum d'élan, ta prochaine séance est offerte.</p></div>
+            <div class="reponse"><p>C'est la garantie premier pas&nbsp;: si tu repars sans élan ni prochain pas clair, la séance suivante est offerte.</p></div>
           </details>
           <details>
             <summary>Comment payer&nbsp;?</summary>
@@ -581,7 +602,7 @@
             <li>Qu'est-ce qui t'empêche de t'y mettre&nbsp;?</li>
             <li>À la fin de la balade, qu'est-ce qui ferait que tu repartes content&nbsp;?</li>
           </ol>
-          <p class="garantie garantie--ligne"><strong>Garantie premier pas</strong>Si tu repars sans ton premier pas, ou sans un minimum d'élan, ta prochaine séance est offerte.</p>
+          <p class="garantie garantie--ligne"><strong>Garantie premier pas</strong>Si tu repars sans élan ni prochain pas clair, la séance suivante est offerte.</p>
         </div>
 
         <div class="choix-formule" role="group" aria-label="Formule" hidden>
@@ -611,7 +632,7 @@
             <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="29" cy="35" r="26" fill="#FFC233"/><circle cx="29" cy="35" r="12" fill="none" stroke="#1E1B3A" stroke-width="6"/><path d="M35 41 L44 50" stroke="#1E1B3A" stroke-width="6" stroke-linecap="round"/><path d="M51 2 L54.2 10.3 L62.5 13.5 L54.2 16.7 L51 25 L47.8 16.7 L39.5 13.5 L47.8 10.3 Z" fill="#FF5A1F"/></svg>
             <span class="logo-texte">Quentin Fauchereau<small>Accompagnateur holistique</small></span>
           </a>
-          <p class="footer-signature">Je ne répare pas ta vie. Je vois la Formule&nbsp;1 en toi, et je te mets sur la piste.</p>
+          <p class="footer-signature">Je ne te pousse pas à aller plus vite. Je t'aide à tenir la distance.</p>
           <p>Crée ce qui t'anime&nbsp;!</p>
         </div>
         <div>
@@ -648,8 +669,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/config.js?v=202611141241"></script>
-  <script src="assets/js/main.js?v=202611141241" defer></script>
+  <script src="assets/js/config.js?v=202611201918"></script>
+  <script src="assets/js/main.js?v=202611201918" defer></script>
   <!-- Bouton WhatsApp flottant -->
   <a class="whatsapp-flottant" href="https://wa.me/33631794479?text=Bonjour%20Quentin%20!" target="_blank" rel="noopener" aria-label="Écrire à Quentin sur WhatsApp" title="Écrire sur WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
