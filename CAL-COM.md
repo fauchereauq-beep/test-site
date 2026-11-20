@@ -41,7 +41,7 @@ Accompagnateur holistique et magnétiseur, au pied du Salève, près de Genève.
 ```
 Une heure de marche à plat, en solo, au pied du Salève. Tu repars avec un prochain pas clair, à faire dans la semaine.
 
-Au programme, en trois temps. On fait le point : pourquoi tu es là, ton système nerveux en 2 minutes, le blocage du jour. On rééquilibre : soin en magnétisme (facultatif) et exercices dans la nature. On relance : l'impro de l'arbre-blocage, puis ta carte défi. Une semaine après, on fait le point ensemble (10 à 15 minutes).
+Au programme, en trois temps. On fait le point : pourquoi tu es là, ton système nerveux en 2 minutes, le blocage du jour. On rééquilibre : soin en magnétisme (facultatif) et exercices dans la nature. On relance : je joue ton rôle (on rit souvent), puis tu tires ta carte défi et tu la commences sur place. Une semaine après, on fait le point ensemble (10 à 15 minutes).
 
 Prix : 90 €, en espèces ou par virement, le jour de la séance. Si tu continues avec le Parcours Premier Pas dans les 30 jours, ces 90 € sont déduits.
 
