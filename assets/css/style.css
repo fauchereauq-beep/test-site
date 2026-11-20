@@ -1227,7 +1227,7 @@ a:hover { text-decoration-thickness: 3px; }
 /* ---------- Chiffres et choix de saison ---------- */
 .chiffres { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .chiffres li { overflow-wrap: anywhere; }
-@media (max-width: 400px) { .chiffres li { padding: 12px 6px; font-size: .78rem; } .chiffres b { font-size: 1.35rem; } }
+@media (max-width: 400px) { .chiffres li { padding: 12px 4px; font-size: .78rem; -webkit-hyphens: auto; hyphens: auto; } .chiffres b { font-size: 1.35rem; } }
 .chiffres li {
   background: var(--creme);
   border-radius: var(--radius-sm);
@@ -1534,3 +1534,6 @@ a:hover { text-decoration-thickness: 3px; }
   margin: 0 0 16px;
   max-width: 34ch;
 }
+
+/* Chiffres : la version mobile doit venir après la règle de base pour s'appliquer */
+@media (max-width: 400px) { .chiffres li { padding: 12px 4px; font-size: .78rem; -webkit-hyphens: auto; hyphens: auto; } .chiffres b { font-size: 1.35rem; } }
