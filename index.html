@@ -28,7 +28,7 @@
 
   <link rel="preload" href="assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=202611202017">
+  <link rel="stylesheet" href="assets/css/style.css?v=202611202035">
 
   <!-- Mesure d'audience sans cookies (Plausible). À activer au lancement :
        retire les deux tirets de commentaire et mets ton vrai domaine.
@@ -113,6 +113,7 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
+          { "@type": "Question", "name": "C'est quoi, réguler son système nerveux ?", "acceptedAnswer": { "@type": "Answer", "text": "C'est aider son corps à sortir du mode alerte (tout s'emballe) ou du mode économie (plus d'énergie), pour revenir à un état où on est à la fois calme et plein d'élan. Pendant la balade, on le fait avec la marche, la respiration, le rire et le soin. Ce n'est pas un traitement médical." } },
           { "@type": "Question", "name": "Je n'ai qu'une envie floue, c'est pour moi ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, si tu as au moins une envie, même floue. Si tu n'as aucune idée, écris-moi : d'autres formats arrivent." } },
           { "@type": "Question", "name": "C'est en groupe ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, en solo : rien que toi et moi, pour que la balade parte entièrement de toi." } },
           { "@type": "Question", "name": "Faut-il être sportif ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est une marche à plat, pas une randonnée : on reste au pied du Salève, à un rythme tranquille, avec des pauses." } },
@@ -258,8 +259,42 @@
           </article>
         </div>
         <p class="bascule">Ce n'est pas un manque de volonté. Ton corps freine. <span class="surligne">On va lâcher le frein.</span></p>
-        <div class="section-fin">
-          <a class="lien-geste" href="test.html">Faire le test en 2 minutes <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ================= LE SYSTÈME NERVEUX ================= -->
+    <section class="section fond-creme" id="systeme-nerveux" aria-labelledby="titre-sn">
+      <div class="container">
+        <p class="surtitre">Comprendre en 30 secondes</p>
+        <h2 id="titre-sn">Ton système nerveux a trois vitesses.</h2>
+        <p class="intro">C'est le pilote automatique de ton corps. Avant même que tu réfléchisses, il choisit pour toi&nbsp;: foncer, freiner, ou avancer tranquille.</p>
+        <ul class="sn-etats">
+          <li class="sn-etat">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="13" fill="#FFC233" stroke="#1E1B3A" stroke-width="3"/><g stroke="#1E1B3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M32 4l-3 5 4 2-2 5"/><path d="M32 60l3-5-4-2 2-5"/><path d="M4 32l5 3 2-4 5 2"/><path d="M60 32l-5-3-2 4-5-2"/></g></svg>
+            <h3>En surchauffe</h3>
+            <p class="sn-image">Le pied sur l'accélérateur.</p>
+            <p>La tête déborde, tout va trop vite, dix idées et aucune ne démarre. C'est souvent là que naît le «&nbsp;j'ai peur de me lancer&nbsp;».</p>
+            <p class="sn-balade"><b>En balade&nbsp;:</b> on fait redescendre la pression.</p>
+          </li>
+          <li class="sn-etat">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M40 12a20 20 0 1 0 12 30A17 17 0 0 1 40 12z" fill="#FFC233" stroke="#1E1B3A" stroke-width="3" stroke-linejoin="round"/><path d="M44 10h8l-8 9h8" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>En veille</h3>
+            <p class="sn-image">Le pied sur le frein.</p>
+            <p>Plus d'élan, le corps vide, le brouillard. Ton corps économise ton énergie pour te protéger. C'est souvent là qu'on se dit «&nbsp;je suis à bout&nbsp;».</p>
+            <p class="sn-balade"><b>En balade&nbsp;:</b> on vide, puis on rallume en douceur.</p>
+          </li>
+          <li class="sn-etat sn-etat--cible">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M36 6 L40.5 19.5 L54 24 L40.5 28.5 L36 42 L31.5 28.5 L18 24 L31.5 19.5 Z" fill="#FF5A1F"/><g stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><path d="M14 58l10-10"/><path d="M24 58l6-6"/><path d="M10 48l6-6"/></g></svg>
+            <h3>Prêt à décoller</h3>
+            <p class="sn-image">Le moteur tourne rond.</p>
+            <p>Calme et énergie en même temps. C'est dans cet état que le premier pas devient simple.</p>
+            <p class="sn-balade"><b>C'est là qu'on va, ensemble.</b></p>
+          </li>
+        </ul>
+        <p class="sn-note">Une image pour comprendre, pas un diagnostic.</p>
+        <div class="sn-fin">
+          <p>Bonne nouvelle&nbsp;: <span class="surligne">ça se règle.</span> Et ça commence par savoir où tu en es.</p>
+          <a class="btn btn--nuit" href="test.html">Fais le test&nbsp;: 2 minutes <span class="fleche" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -363,7 +398,7 @@
             <li class="etape" data-min="8">
               <div class="etape-temps"><b>8′</b> 4 min</div>
               <h3><button type="button" class="etape-btn">Ton système nerveux en 2 minutes</button></h3>
-              <p>Je te dis où en est ton système nerveux&nbsp;: en surchauffe, en veille, ou prêt à repartir. Souvent, rien que de le comprendre, ça soulage.</p>
+              <p>Je te dis où en est ton système nerveux&nbsp;: en surchauffe, en veille, ou prêt à décoller. Souvent, rien que de le comprendre, ça soulage.</p>
             </li>
             <li class="etape" data-min="12">
               <div class="etape-temps"><b>12′</b> 8 min</div>
@@ -404,18 +439,6 @@
         <p class="surtitre">Le lieu · à 15 min de Genève</p>
         <h2 id="titre-lieu">La Maison du Salève, un lieu chargé d'histoire.</h2>
         <p>Une ancienne ferme du XVIII<sup>e</sup> siècle, qui appartenait aux moines de la chartreuse de Pomier, le monastère voisin. Aujourd'hui, c'est notre point de départ&nbsp;: au calme, au pied du Salève, à seulement 15 minutes de Genève.</p>
-      </div>
-    </section>
-
-    <!-- ================= 4.5 LE TEST (bandeau, le test complet est sur test.html) ================= -->
-    <section class="section section--fine fond-sable" aria-labelledby="titre-test-bandeau">
-      <div class="container bandeau-test">
-        <div>
-          <p class="surtitre surtitre--jungle">Jeu · 2 minutes</p>
-          <h2 id="titre-test-bandeau">Où en est ton système nerveux&nbsp;?</h2>
-          <p>8 questions, ton profil (en surchauffe, en veille ou prêt à décoller) et un exercice d'une minute à faire tout de suite.</p>
-        </div>
-        <a class="btn btn--nuit" href="test.html">Faire le test <span class="fleche" aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -558,6 +581,10 @@
         <h2 id="titre-faq">Tu te demandes…</h2>
         <div class="faq">
           <details>
+            <summary>C'est quoi, réguler son système nerveux&nbsp;?</summary>
+            <div class="reponse"><p>C'est aider ton corps à sortir du mode alerte (tout s'emballe) ou du mode économie (plus d'énergie), pour revenir à un état où tu es à la fois calme et plein d'élan. Pendant la balade, on le fait avec la marche, la respiration, le rire et le soin. Ce n'est pas un traitement médical.</p></div>
+          </details>
+          <details>
             <summary>Je n'ai qu'une envie floue, c'est pour moi&nbsp;?</summary>
             <div class="reponse"><p>Oui, si tu as au moins une envie, même floue. Si tu n'as aucune idée, écris-moi&nbsp;: d'autres formats arrivent.</p></div>
           </details>
@@ -688,8 +715,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/config.js?v=202611202017"></script>
-  <script src="assets/js/main.js?v=202611202017" defer></script>
+  <script src="assets/js/config.js?v=202611202035"></script>
+  <script src="assets/js/main.js?v=202611202035" defer></script>
   <!-- Bouton WhatsApp flottant -->
   <a class="whatsapp-flottant" href="https://wa.me/33631794479?text=Bonjour%20Quentin%20!" target="_blank" rel="noopener" aria-label="Écrire à Quentin sur WhatsApp" title="Écrire sur WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>

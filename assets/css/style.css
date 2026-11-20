@@ -1549,3 +1549,22 @@ a:hover { text-decoration-thickness: 3px; }
   padding-left: 14px;
 }
 .qui-mouvement b { color: var(--flamme-texte); }
+
+/* ---------- Le système nerveux en trois vitesses ---------- */
+.sn-etats { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 14px; }
+.sn-etat { background: #fff; border: 2px solid var(--sable); border-radius: var(--radius); padding: 22px; display: grid; gap: 6px; align-content: start; }
+.sn-etat svg { width: 52px; height: 52px; margin-bottom: 4px; }
+.sn-etat h3 { margin: 0; font-size: 1.3rem; }
+.sn-etat p { margin: 0; }
+.sn-image { font-weight: 600; color: var(--flamme-texte); }
+.sn-balade { margin-top: 8px !important; padding-top: 10px; border-top: 1px dashed var(--sable); font-size: .95rem; }
+.sn-etat--cible { background: var(--soleil); border-color: var(--soleil); }
+.sn-etat--cible .sn-image { color: var(--nuit); }
+.sn-etat--cible .sn-balade { border-top-color: rgba(30, 27, 58, .25); }
+.sn-note { margin: 12px 0 0; font-size: .88rem; color: var(--gris-nuit); }
+.sn-fin { margin-top: 22px; display: grid; gap: 14px; justify-items: start; }
+.sn-fin p { margin: 0; font-family: var(--font-titre); font-weight: 700; font-size: clamp(1.15rem, 4vw, 1.4rem); }
+@media (min-width: 820px) {
+  .sn-etats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sn-fin { grid-template-columns: 1fr auto; align-items: center; }
+}
